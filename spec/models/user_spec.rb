@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe User do
-	before { @user = User.new(name: "Example User", email: "user@example.com") }
+	before { @user = User.new(name: "ExampleUser", email: "user@example.com") }
 
 	subject { @user }
 
@@ -18,6 +18,30 @@ describe User do
 		before { @user.name = "a"*101 }
 		it { should_not be_valid }
 	end
+
+	describe "when name is too short" do
+		before { @user.name = "a"*5 }
+		it { should_not be_valid }
+	end
+	
+	describe "when name is already taken" do
+		before do
+			user_with_same_name = User.new(name: @user.name, email: "user2@example.com")
+			user_with_same_name.save
+		end
+
+		it { should_not be_valid }
+	end
+	
+	describe "when name format is invalid" do
+		it "should be invalid" do
+			name = %w[! @ # $ % ^ & *  " < > , .]
+			name.each do |invalid_name|
+				@user.name = invalid_name
+				expect(@user).not_to be_valid
+			end
+		end
+	end	
 	
 	describe "when email is not present" do
 		before { @user.email = " " }
@@ -26,7 +50,7 @@ describe User do
 
 	describe "when email address is already taken" do
 		before do
-			user_with_same_email = @user.dup
+			user_with_same_email = User.new(name: "ExampleUser2", email: @user.email)
 			user_with_same_email.save
 		end
 

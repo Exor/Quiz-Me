@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe "static_pages/about.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "about.html" do
+	subject { page }
+	before { visit '/static_pages/about' }
+	
+	it { should have_title("Quiz | About") }
 end

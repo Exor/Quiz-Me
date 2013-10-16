@@ -30,6 +30,7 @@ describe "signin.html" do
 			end
 
 			it { should have_link('Logout',    href: signout_path) }
+			it { should have_link('Change Password',    href: edit_user_path(user)) }
 			it { should_not have_link('Log in', href: signin_path) }
 			
 			describe "followed by signout" do

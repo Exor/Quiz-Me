@@ -9,4 +9,15 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-QuizGenerator::Application.config.secret_key_base = 'd775c1f4fc4cb4788a38f5e58567c771aee8422934646fef0ccac441c7918423bbf58053b6b619e97fa07308f46da1722a597003612d8dcc59f06e5923635e5b'
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end

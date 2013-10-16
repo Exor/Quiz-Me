@@ -1,13 +1,20 @@
 require 'spec_helper'
 
 describe User do
-	before { @user = User.new(name: "ExampleUser", email: "user@example.com") }
+	before { @user = User.new(name: "ExampleUser", 
+					email: "user@example.com",
+					password: "foobarbaz", 
+					password_confirmation: "foobarbaz") }
 
 	subject { @user }
 
 	it { should respond_to(:name) }
 	it { should respond_to(:email) }
+	it { should respond_to(:password_digest) }
+	it { should respond_to(:password) }
+	it { should respond_to(:password_confirmation) }
 	it { should be_valid }
+	it { should respond_to(:authenticate) }
 	
 	describe "when name is not present" do
 		before { @user.name = " " }
@@ -26,7 +33,8 @@ describe User do
 	
 	describe "when name is already taken" do
 		before do
-			user_with_same_name = User.new(name: @user.name, email: "user2@example.com")
+			user_with_same_name = @user.dup
+			user_with_same_name.email = "user2@example.com"
 			user_with_same_name.save
 		end
 
@@ -50,7 +58,8 @@ describe User do
 
 	describe "when email address is already taken" do
 		before do
-			user_with_same_email = User.new(name: "ExampleUser2", email: @user.email)
+			user_with_same_email = @user.dup
+			user_with_same_email.name = "ExampleUser2"
 			user_with_same_email.save
 		end
 
@@ -76,5 +85,18 @@ describe User do
 				expect(@user).to be_valid
 			end
 		end
+	end
+	
+	describe "when password is not present" do
+		before do
+			@user.password = " "
+			@user.password_confirmation = " "
+		end
+		it { should_not be_valid }
+	end
+	
+	describe "with a password that's too short" do
+		before { @user.password = @user.password_confirmation = "a" * 7 }
+		it { should be_invalid }
 	end
 end

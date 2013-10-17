@@ -1,0 +1,390 @@
+<NotepadPlus>
+    <Project name="Project Name">
+        <Folder name="Folder Name">
+            <Folder name=".bundle">
+                <File name=".bundle\config" />
+            </Folder>
+            <Folder name="app">
+                <Folder name="assets">
+                    <Folder name="images">
+                        <File name="app\assets\images\.keep" />
+                    </Folder>
+                    <Folder name="javascripts">
+                        <File name="app\assets\javascripts\application.js" />
+                        <File name="app\assets\javascripts\sessions.js.coffee" />
+                        <File name="app\assets\javascripts\static_pages.js.coffee" />
+                        <File name="app\assets\javascripts\users.js.coffee" />
+                    </Folder>
+                    <Folder name="stylesheets">
+                        <File name="app\assets\stylesheets\application.css" />
+                        <File name="app\assets\stylesheets\custom.css.scss" />
+                        <File name="app\assets\stylesheets\sessions.css.scss" />
+                        <File name="app\assets\stylesheets\static_pages.css.scss" />
+                        <File name="app\assets\stylesheets\users.css.scss" />
+                    </Folder>
+                </Folder>
+                <Folder name="controllers">
+                    <Folder name="concerns">
+                        <File name="app\controllers\concerns\.keep" />
+                    </Folder>
+                    <File name="app\controllers\application_controller.rb" />
+                    <File name="app\controllers\sessions_controller.rb" />
+                    <File name="app\controllers\static_pages_controller.rb" />
+                    <File name="app\controllers\users_controller.rb" />
+                </Folder>
+                <Folder name="helpers">
+                    <File name="app\helpers\application_helper.rb" />
+                    <File name="app\helpers\sessions_helper.rb" />
+                    <File name="app\helpers\static_pages_helper.rb" />
+                    <File name="app\helpers\users_helper.rb" />
+                </Folder>
+                <Folder name="mailers">
+                    <File name="app\mailers\.keep" />
+                </Folder>
+                <Folder name="models">
+                    <Folder name="concerns">
+                        <File name="app\models\concerns\.keep" />
+                    </Folder>
+                    <File name="app\models\.keep" />
+                    <File name="app\models\user.rb" />
+                </Folder>
+                <Folder name="views">
+                    <Folder name="layouts">
+                        <File name="app\views\layouts\application.html.erb" />
+                        <File name="app\views\layouts\_footer.html.erb" />
+                        <File name="app\views\layouts\_header.html.erb" />
+                        <File name="app\views\layouts\_shim.html.erb" />
+                    </Folder>
+                    <Folder name="sessions">
+                        <File name="app\views\sessions\new.html.erb" />
+                    </Folder>
+                    <Folder name="static_pages">
+                        <File name="app\views\static_pages\about.html.erb" />
+                        <File name="app\views\static_pages\home.html.erb" />
+                    </Folder>
+                    <Folder name="users">
+                        <File name="app\views\users\edit.html.erb" />
+                    </Folder>
+                    <Folder name="shared">
+                        <File name="app\views\shared\_error_messages.html.erb" />
+                    </Folder>
+                </Folder>
+            </Folder>
+            <Folder name="bin">
+                <File name="bin\bundle" />
+                <File name="bin\rails" />
+                <File name="bin\rake" />
+            </Folder>
+            <Folder name="config">
+                <Folder name="environments">
+                    <File name="config\environments\development.rb" />
+                    <File name="config\environments\production.rb" />
+                    <File name="config\environments\test.rb" />
+                </Folder>
+                <Folder name="initializers">
+                    <File name="config\initializers\backtrace_silencers.rb" />
+                    <File name="config\initializers\filter_parameter_logging.rb" />
+                    <File name="config\initializers\inflections.rb" />
+                    <File name="config\initializers\mime_types.rb" />
+                    <File name="config\initializers\secret_token.rb" />
+                    <File name="config\initializers\session_store.rb" />
+                    <File name="config\initializers\wrap_parameters.rb" />
+                </Folder>
+                <Folder name="locales">
+                    <File name="config\locales\en.yml" />
+                </Folder>
+                <File name="config\application.rb" />
+                <File name="config\boot.rb" />
+                <File name="config\database.yml" />
+                <File name="config\environment.rb" />
+                <File name="config\routes.rb" />
+            </Folder>
+            <Folder name="db">
+                <Folder name="migrate">
+                    <File name="db\migrate\20131016032148_create_users.rb" />
+                    <File name="db\migrate\20131016034606_add_index_to_users_email.rb" />
+                    <File name="db\migrate\20131016034920_add_index_to_users_name.rb" />
+                    <File name="db\migrate\20131016040716_add_password_digest_to_users.rb" />
+                    <File name="db\migrate\20131016084328_add_remember_token_to_users.rb" />
+                </Folder>
+                <File name="db\development.sqlite3" />
+                <File name="db\schema.rb" />
+                <File name="db\seeds.rb" />
+                <File name="db\test.sqlite3" />
+            </Folder>
+            <Folder name="lib">
+                <Folder name="assets">
+                    <File name="lib\assets\.keep" />
+                </Folder>
+                <Folder name="tasks">
+                    <File name="lib\tasks\.keep" />
+                </Folder>
+            </Folder>
+            <Folder name="log">
+                <File name="log\.keep" />
+                <File name="log\development.log" />
+                <File name="log\test.log" />
+            </Folder>
+            <Folder name="public">
+                <File name="public\404.html" />
+                <File name="public\422.html" />
+                <File name="public\500.html" />
+                <File name="public\favicon.ico" />
+                <File name="public\robots.txt" />
+            </Folder>
+            <Folder name="spec">
+                <Folder name="controllers">
+                    <File name="spec\controllers\sessions_controller_spec.rb" />
+                    <File name="spec\controllers\static_pages_controller_spec.rb" />
+                    <File name="spec\controllers\users_controller_spec.rb" />
+                </Folder>
+                <Folder name="helpers">
+                    <File name="spec\helpers\sessions_helper_spec.rb" />
+                    <File name="spec\helpers\static_pages_helper_spec.rb" />
+                    <File name="spec\helpers\users_helper_spec.rb" />
+                </Folder>
+                <Folder name="models">
+                    <File name="spec\models\user_spec.rb" />
+                </Folder>
+                <Folder name="views">
+                    <Folder name="static_pages">
+                        <File name="spec\views\static_pages\about.html.erb_spec.rb" />
+                        <File name="spec\views\static_pages\home.html.erb_spec.rb" />
+                    </Folder>
+                    <Folder name="user_pages">
+                        <File name="spec\views\user_pages\edit.html_spec.rb" />
+                        <File name="spec\views\user_pages\signin.html_spec.rb" />
+                    </Folder>
+                </Folder>
+                <File name="spec\spec_helper.rb" />
+                <File name="spec\factories.rb" />
+                <File name="spec\signin.rb" />
+            </Folder>
+            <Folder name="tmp">
+                <Folder name="cache">
+                    <Folder name="assets">
+                        <Folder name="development">
+                            <Folder name="sass">
+                                <Folder name="1ec36c3bb02faca7589e6b2021f9f4aa7e13fa9f">
+                                    <File name="tmp\cache\assets\development\sass\1ec36c3bb02faca7589e6b2021f9f4aa7e13fa9f\bootstrap.scssc" />
+                                </Folder>
+                                <Folder name="594a67a555ab971c3fe65dd4140e3b3fe5831e67">
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\bootstrap.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_accordion.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_alerts.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_breadcrumbs.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_button-groups.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_buttons.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_carousel.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_close.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_code.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_component-animations.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_dropdowns.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_forms.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_grid.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_hero-unit.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_labels-badges.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_layouts.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_media.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_mixins.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_modals.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_navbar.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_navs.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_pager.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_pagination.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_popovers.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_progress-bars.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_reset.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_scaffolding.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_sprites.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_tables.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_thumbnails.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_tooltip.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_type.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_utilities.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_variables.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_wells.scssc" />
+                                </Folder>
+                                <Folder name="e553543b22dc98a707dfbd94e792acd2d20e7d37">
+                                    <File name="tmp\cache\assets\development\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\custom.css.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\static_pages.css.scssc" />
+                                    <File name="tmp\cache\assets\development\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\users.css.scssc" />
+                                </Folder>
+                            </Folder>
+                            <Folder name="sprockets">
+                                <File name="tmp\cache\assets\development\sprockets\00cfbc78573898b48d3dd047a3bdab4d" />
+                                <File name="tmp\cache\assets\development\sprockets\0683e079ee2a8ddfe4d13a7fecd46855" />
+                                <File name="tmp\cache\assets\development\sprockets\09293b857e847a7f8e8d067434c7420e" />
+                                <File name="tmp\cache\assets\development\sprockets\0a3682622197d9723cb1766459149851" />
+                                <File name="tmp\cache\assets\development\sprockets\111fa1ac8d5452a65e266cd7912d0387" />
+                                <File name="tmp\cache\assets\development\sprockets\13524d70748826d5c5c205dfd7374dc2" />
+                                <File name="tmp\cache\assets\development\sprockets\13fe41fee1fe35b49d145bcc06610705" />
+                                <File name="tmp\cache\assets\development\sprockets\1a66d8334bb82817e826dbeba46cf0cc" />
+                                <File name="tmp\cache\assets\development\sprockets\1f258fb547139e7db4cc18f624b7f0b5" />
+                                <File name="tmp\cache\assets\development\sprockets\2ef8657a79b31e7211a624925b9add6b" />
+                                <File name="tmp\cache\assets\development\sprockets\2f5173deea6c795b8fdde723bb4b63af" />
+                                <File name="tmp\cache\assets\development\sprockets\357970feca3ac29060c1e3861e2c0953" />
+                                <File name="tmp\cache\assets\development\sprockets\3b515606e3e089fb60ee736b6eacb3c3" />
+                                <File name="tmp\cache\assets\development\sprockets\3e5746da7720d455af8dc6894401232b" />
+                                <File name="tmp\cache\assets\development\sprockets\40b826dd53d9973b69ab9378affde164" />
+                                <File name="tmp\cache\assets\development\sprockets\4273aaff94b9e5e671a8c651e7822cb7" />
+                                <File name="tmp\cache\assets\development\sprockets\4ad413f3e3326481d2f5f9327bbd0e12" />
+                                <File name="tmp\cache\assets\development\sprockets\60bf6b13ea3f32b53aeca58b7f621a3a" />
+                                <File name="tmp\cache\assets\development\sprockets\659866f4174407c54b494707bbfa2e57" />
+                                <File name="tmp\cache\assets\development\sprockets\664f94d577afe5a151db8c7de62523ca" />
+                                <File name="tmp\cache\assets\development\sprockets\69238a7165b7a833f974cae21aaf568e" />
+                                <File name="tmp\cache\assets\development\sprockets\6b2da9ae0732b23b4bcc74a052987fa5" />
+                                <File name="tmp\cache\assets\development\sprockets\6c0f2a2c7346b84a92e2cb81473e251b" />
+                                <File name="tmp\cache\assets\development\sprockets\6cc2e54c57d351c21a7619fb94a116b0" />
+                                <File name="tmp\cache\assets\development\sprockets\7fd9aba0a3aba31332e5c0901e933acd" />
+                                <File name="tmp\cache\assets\development\sprockets\82bf9ccf676306bdcc8b878f9e3ad902" />
+                                <File name="tmp\cache\assets\development\sprockets\85ae64edf528ce6e981889f3f3c285d9" />
+                                <File name="tmp\cache\assets\development\sprockets\8989d4b0d5fd965a8adafcb14178722a" />
+                                <File name="tmp\cache\assets\development\sprockets\90fc311c95a685477f8b0075ffd5b1f0" />
+                                <File name="tmp\cache\assets\development\sprockets\96c8a359d272a17849ef34c41615dcc7" />
+                                <File name="tmp\cache\assets\development\sprockets\9775fd18125f30ba9779ba501c5d0af4" />
+                                <File name="tmp\cache\assets\development\sprockets\977ead1d20bc9f7e1c191bd4348f9e3a" />
+                                <File name="tmp\cache\assets\development\sprockets\981fdf59c6c819da5a85424ee749e704" />
+                                <File name="tmp\cache\assets\development\sprockets\9b28e80b383c0add5865b19f92f77ff2" />
+                                <File name="tmp\cache\assets\development\sprockets\9b8c3e07b2219420d4c1ecf07e78d37c" />
+                                <File name="tmp\cache\assets\development\sprockets\a71070291911ff9b706b37354ba9dc89" />
+                                <File name="tmp\cache\assets\development\sprockets\a815974304c08b17d6803bf67717eca2" />
+                                <File name="tmp\cache\assets\development\sprockets\aea491fd68db2aba6070fc2dd0f9bc27" />
+                                <File name="tmp\cache\assets\development\sprockets\b180fbc61d213104e6bca64ab28301ff" />
+                                <File name="tmp\cache\assets\development\sprockets\b8397904337990300f0e3a17b153b48f" />
+                                <File name="tmp\cache\assets\development\sprockets\bb5aa586944170fa9f76bdce5ba1ae73" />
+                                <File name="tmp\cache\assets\development\sprockets\c1a5f71a6c3740ffd0e6c05c88cf2447" />
+                                <File name="tmp\cache\assets\development\sprockets\c214db30f034a1beb3b77372d0035b61" />
+                                <File name="tmp\cache\assets\development\sprockets\c29d9baf450655d8970c87d156791bd8" />
+                                <File name="tmp\cache\assets\development\sprockets\cb4c2452aafb889fff938f630b33d20b" />
+                                <File name="tmp\cache\assets\development\sprockets\cffd775d018f68ce5dba1ee0d951a994" />
+                                <File name="tmp\cache\assets\development\sprockets\d1146f6ed614d6a420fe5914b0c307e7" />
+                                <File name="tmp\cache\assets\development\sprockets\d6c7ce3ac277094b04690a43947ede22" />
+                                <File name="tmp\cache\assets\development\sprockets\d771ace226fc8215a3572e0aa35bb0d6" />
+                                <File name="tmp\cache\assets\development\sprockets\dda0f614553b052fa0fceeaee2cf226b" />
+                                <File name="tmp\cache\assets\development\sprockets\e2e8f7f4c2e46b20bbaa95d67e83c41e" />
+                                <File name="tmp\cache\assets\development\sprockets\ea7d53e9a1f9a71ef9222c35293653f4" />
+                                <File name="tmp\cache\assets\development\sprockets\eb53d96a6a9c699312c86f858edf5cc5" />
+                                <File name="tmp\cache\assets\development\sprockets\edbf63d87f211c17de329b8a471a7caf" />
+                                <File name="tmp\cache\assets\development\sprockets\ef5e3a1f6e40e8f05175dabcda476799" />
+                                <File name="tmp\cache\assets\development\sprockets\f1e9f05b46722c666d8443797cfdfbfe" />
+                                <File name="tmp\cache\assets\development\sprockets\f648f4f32a06d1235458229b602507cf" />
+                                <File name="tmp\cache\assets\development\sprockets\f69d5b313b181d20aa2da9d2ad510aaf" />
+                                <File name="tmp\cache\assets\development\sprockets\f7cbd26ba1d28d48de824f0e94586655" />
+                                <File name="tmp\cache\assets\development\sprockets\fca0d01a3500f96dd480b23f46261ab0" />
+                                <File name="tmp\cache\assets\development\sprockets\fd499cc4a4cd7d19dc69658fab0268ab" />
+                                <File name="tmp\cache\assets\development\sprockets\fe9e2fb49e4f6b7a64aa948d9963ad9c" />
+                                <File name="tmp\cache\assets\development\sprockets\ff81a326d9c313989ca15375bab6fee5" />
+                            </Folder>
+                        </Folder>
+                        <Folder name="test">
+                            <Folder name="sass">
+                                <Folder name="1ec36c3bb02faca7589e6b2021f9f4aa7e13fa9f">
+                                    <File name="tmp\cache\assets\test\sass\1ec36c3bb02faca7589e6b2021f9f4aa7e13fa9f\bootstrap.scssc" />
+                                </Folder>
+                                <Folder name="594a67a555ab971c3fe65dd4140e3b3fe5831e67">
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\bootstrap.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_accordion.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_alerts.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_breadcrumbs.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_button-groups.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_buttons.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_carousel.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_close.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_code.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_component-animations.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_dropdowns.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_forms.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_grid.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_hero-unit.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_labels-badges.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_layouts.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_media.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_mixins.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_modals.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_navbar.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_navs.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_pager.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_pagination.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_popovers.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_progress-bars.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_reset.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_scaffolding.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_sprites.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_tables.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_thumbnails.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_tooltip.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_type.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_utilities.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_variables.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\594a67a555ab971c3fe65dd4140e3b3fe5831e67\_wells.scssc" />
+                                </Folder>
+                                <Folder name="e553543b22dc98a707dfbd94e792acd2d20e7d37">
+                                    <File name="tmp\cache\assets\test\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\custom.css.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\sessions.css.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\static_pages.css.scssc" />
+                                    <File name="tmp\cache\assets\test\sass\e553543b22dc98a707dfbd94e792acd2d20e7d37\users.css.scssc" />
+                                </Folder>
+                            </Folder>
+                            <Folder name="sprockets">
+                                <File name="tmp\cache\assets\test\sprockets\0335d87ebd93523744c2fec4426f4432" />
+                                <File name="tmp\cache\assets\test\sprockets\0683e079ee2a8ddfe4d13a7fecd46855" />
+                                <File name="tmp\cache\assets\test\sprockets\0f8aa08bcb16235a9f63bb55b7cdaad8" />
+                                <File name="tmp\cache\assets\test\sprockets\111fa1ac8d5452a65e266cd7912d0387" />
+                                <File name="tmp\cache\assets\test\sprockets\13fe41fee1fe35b49d145bcc06610705" />
+                                <File name="tmp\cache\assets\test\sprockets\2ef8657a79b31e7211a624925b9add6b" />
+                                <File name="tmp\cache\assets\test\sprockets\2f5173deea6c795b8fdde723bb4b63af" />
+                                <File name="tmp\cache\assets\test\sprockets\357970feca3ac29060c1e3861e2c0953" />
+                                <File name="tmp\cache\assets\test\sprockets\3b515606e3e089fb60ee736b6eacb3c3" />
+                                <File name="tmp\cache\assets\test\sprockets\3e5746da7720d455af8dc6894401232b" />
+                                <File name="tmp\cache\assets\test\sprockets\4273aaff94b9e5e671a8c651e7822cb7" />
+                                <File name="tmp\cache\assets\test\sprockets\4ad413f3e3326481d2f5f9327bbd0e12" />
+                                <File name="tmp\cache\assets\test\sprockets\659866f4174407c54b494707bbfa2e57" />
+                                <File name="tmp\cache\assets\test\sprockets\6c0f2a2c7346b84a92e2cb81473e251b" />
+                                <File name="tmp\cache\assets\test\sprockets\73d5b3d4a4584cbe9dfa3937b134c007" />
+                                <File name="tmp\cache\assets\test\sprockets\7fd9aba0a3aba31332e5c0901e933acd" />
+                                <File name="tmp\cache\assets\test\sprockets\82bf9ccf676306bdcc8b878f9e3ad902" />
+                                <File name="tmp\cache\assets\test\sprockets\85ae64edf528ce6e981889f3f3c285d9" />
+                                <File name="tmp\cache\assets\test\sprockets\8a0e7cc1ca5e1af0b1a30ac42ea00e1a" />
+                                <File name="tmp\cache\assets\test\sprockets\977ead1d20bc9f7e1c191bd4348f9e3a" />
+                                <File name="tmp\cache\assets\test\sprockets\b8397904337990300f0e3a17b153b48f" />
+                                <File name="tmp\cache\assets\test\sprockets\cb4c2452aafb889fff938f630b33d20b" />
+                                <File name="tmp\cache\assets\test\sprockets\cffd775d018f68ce5dba1ee0d951a994" />
+                                <File name="tmp\cache\assets\test\sprockets\d1146f6ed614d6a420fe5914b0c307e7" />
+                                <File name="tmp\cache\assets\test\sprockets\d6c7ce3ac277094b04690a43947ede22" />
+                                <File name="tmp\cache\assets\test\sprockets\d771ace226fc8215a3572e0aa35bb0d6" />
+                                <File name="tmp\cache\assets\test\sprockets\dda0f614553b052fa0fceeaee2cf226b" />
+                                <File name="tmp\cache\assets\test\sprockets\edbf63d87f211c17de329b8a471a7caf" />
+                                <File name="tmp\cache\assets\test\sprockets\f7cbd26ba1d28d48de824f0e94586655" />
+                                <File name="tmp\cache\assets\test\sprockets\ff81a326d9c313989ca15375bab6fee5" />
+                            </Folder>
+                        </Folder>
+                    </Folder>
+                </Folder>
+                <Folder name="pids">
+                    <File name="tmp\pids\server.pid" />
+                </Folder>
+                <Folder name="sessions" />
+                <Folder name="sockets" />
+            </Folder>
+            <Folder name="vendor">
+                <Folder name="assets">
+                    <Folder name="javascripts">
+                        <File name="vendor\assets\javascripts\.keep" />
+                    </Folder>
+                    <Folder name="stylesheets">
+                        <File name="vendor\assets\stylesheets\.keep" />
+                    </Folder>
+                </Folder>
+            </Folder>
+            <File name=".gitignore" />
+            <File name=".rspec" />
+            <File name=".secret" />
+            <File name="config.ru" />
+            <File name="Gemfile" />
+            <File name="Gemfile.lock" />
+            <File name="Rakefile" />
+            <File name="README.md" />
+        </Folder>
+    </Project>
+</NotepadPlus>

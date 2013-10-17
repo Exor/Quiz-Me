@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :quizzes
 	before_save { self.email = email.downcase } 
 	before_save { self.name = name.downcase }
 	before_create :create_remember_token

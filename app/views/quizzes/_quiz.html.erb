@@ -9,6 +9,12 @@
 		</div>
 	</td>
 	<td><%= quiz.description %></td>
-	<td><%= quiz.created_at %></td>
-	<td><%= quiz.access_count %></td>
+	<td><%= quiz.created_at.strftime("%B, %e %Y") %></td>
+	<td>
+		<% if quiz.access_count == nil %>
+			0
+		<% else %>
+			<%= quiz.access_count %>
+		<% end %>
+	</td>
 </tr>

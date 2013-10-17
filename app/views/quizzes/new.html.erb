@@ -1,0 +1,23 @@
+<% provide(:title, "Create a New Quiz") %>
+
+<div class="row">
+	<%= form_for(@quiz) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<div class="span5">
+			<%= f.label :name, "Title" %>
+			<%= f.text_field :name, placeholder: "Name of your quiz" %>
+			
+			<%= f.label :description %>
+			<%= f.text_field :description, placeholder: "Describe your quiz" %>
+			
+			<%= f.label :help_text, "Help Text" %>
+			<%= f.text_field :help_text, placeholder: "Give a few hints for the quiz taker" %>
+		</div>
+		<div class="span4">
+			Quiz options go here
+		</div>
+		<div class="span3">
+			<%= f.submit "Create my Quiz!", class: "btn btn-large btn-prmary" %>
+		</div>
+	<% end %>
+</div>

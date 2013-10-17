@@ -54,6 +54,7 @@ describe "UserPages" do
 			it { should have_content(quiz2.description) }
 			it { should have_content(quiz1.access_count) }
 			it { should have_content(quiz2.access_count) }
+			
 		end
 	
 	end

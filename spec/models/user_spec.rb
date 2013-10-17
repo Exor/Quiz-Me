@@ -122,5 +122,14 @@ describe User do
 		it "should have the right quiz in the right order" do
 		  expect(@user.quizzes.to_a).to eq [newer_quiz, older_quiz]
 		end
+		
+		it "should destroy associated quizzes" do
+			quizzes = @user.quizzes.to_a
+			@user.destroy
+			expect(quizzes).not_to be_empty
+			quizzes.each do |quiz|
+				expect(Quiz.where(id: quiz.id)).to be_empty
+			end
+		end
 	end
 end

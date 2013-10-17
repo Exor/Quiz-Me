@@ -18,10 +18,7 @@ describe "signin.html" do
 		end
 		
 		describe "with valid information" do
-			let(:user) { User.new(name: "ExampleUser", 
-					email: "user@example.com",
-					password: "foobarbaz", 
-					password_confirmation: "foobarbaz") }
+			let(:user) { FactoryGirl.create(:user) }
 			before do
 				user.save
 				fill_in "Username",    with: user.name

@@ -59,6 +59,8 @@ describe "Authentication" do
 		end
 		
 		describe "in the Quizzes controller" do
+			let(:quiz) { FactoryGirl.create(:quiz, user: user) }
+			
 			
 			describe "submitting the create action" do
 				before { post quizzes_path }
@@ -66,7 +68,17 @@ describe "Authentication" do
 			end
 			
 			describe "Submitting the delete action" do
-				before { delete quiz_path(FactoryGirl.create(:quiz, user: user)) }
+				before { delete quiz_path(quiz) }
+				specify { expect(response).to redirect_to(signin_path) }
+			end
+		
+			describe "visiting the edit page" do
+				before { visit edit_quiz_path(quiz) }
+				it { should have_title('Sign in') }
+			end
+
+			describe "submitting to the update action" do
+				before { patch quiz_path(quiz) }
 				specify { expect(response).to redirect_to(signin_path) }
 			end
 		

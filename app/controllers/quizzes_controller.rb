@@ -1,6 +1,6 @@
 class QuizzesController < ApplicationController
 	before_action :signed_in_user
-	before_action :correct_user, only: :destroy
+	before_action :correct_user, only: [:destroy, :edit, :update]
 	
 	def new
 		@quiz = current_user.quizzes.build if signed_in?
@@ -13,6 +13,18 @@ class QuizzesController < ApplicationController
 			redirect_to browse_path
 		else
 			render new_quiz_path
+		end
+	end
+
+	def edit
+	end
+	
+	def update
+		if @quiz.update_attributes(quiz_params)
+			flash[:success] = "Quiz updated"
+			redirect_to browse_path
+		else
+			render 'edit'
 		end
 	end
 	

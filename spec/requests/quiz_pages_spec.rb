@@ -6,7 +6,6 @@ describe "QuizPages" do
 	before { sign_in user }	
 
 	describe "browse page" do
-		let(:user) { FactoryGirl.create(:user) }
 		let!(:quiz) { FactoryGirl.create(:quiz, user: user, name: "Quiz One", description: "descroitpion one", access_count: 5) }
 	
 		before { visit browse_path }
@@ -19,15 +18,19 @@ describe "QuizPages" do
 			it { should have_content(quiz.access_count) }
 		end
 		
-		describe "quiz deletion" do
+		describe "quiz delete button" do
 			it "should delete a quiz" do
 				expect { click_link "Delete" }.to change(Quiz, :count).by(-1)
 			end
 		end
 		
+		describe "quiz edit button" do
+			it { should have_link("Edit", href: edit_quiz_path(quiz)) }
+		end
+		
 	end
 	
-	describe "quiz creation" do
+	describe "quiz create page" do
 		before { visit new_quiz_path }
 		
 		it { should have_title("Create a New Quiz") }
@@ -41,6 +44,26 @@ describe "QuizPages" do
 				before { click_button "Create" }
 				it { should have_content('error') }
 			end
+		end
+	end
+	
+	describe "quiz edit page" do
+		let!(:quiz) { FactoryGirl.create(:quiz, user: user) }
+		before { visit edit_quiz_path(quiz) }
+	
+		it { should have_title("Update") }
+		
+		describe "with valid information" do
+			before { click_button "Update" }
+			it { should have_content('Quiz updated') }
+		end
+		
+		describe "with invalid information" do
+			before do
+				fill_in "Title", with: ' '
+				click_button "Update"
+			end
+			it { should have_content('error') }
 		end
 	end
 	

@@ -4,10 +4,10 @@
 		<div class="btn-group">
 			<button type="button" class="btn btn-default">Take</button>
 			<button type="button" class="btn btn-default">Share</button>
-			<button type="button" class="btn btn-default">Edit</button>
-			<%= link_to "Delete", quiz, method: :delete, 
-										data: { confirm: "Are you sure?" }, 
-										class: "btn btn-default" %>
+			<%= link_to "Edit",		edit_quiz_path(quiz), class: "btn btn-default" %>
+			<%= link_to "Delete", 	quiz, 	method: :delete, 
+											data: { confirm: "Are you sure?" }, 
+											class: "btn btn-default" %>
 		</div>
 	</td>
 	<td><%= quiz.description %></td>

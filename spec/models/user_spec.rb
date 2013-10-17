@@ -109,5 +109,18 @@ describe User do
 	before { @user.save }
 	its(:remember_token) { should_not be_blank }
   end
-  
+
+	describe "quiz associations" do
+	    before { @user.save }
+		let!(:older_quiz) do
+			FactoryGirl.create(:quiz, user: @user, created_at: 1.day.ago)
+		end
+		let!(:newer_quiz) do
+			FactoryGirl.create(:quiz, user: @user, created_at: 1.hour.ago)
+		end
+
+		it "should have the right quiz in the right order" do
+		  expect(@user.quizzes.to_a).to eq [newer_quiz, older_quiz]
+		end
+	end
 end

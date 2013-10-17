@@ -47,6 +47,8 @@ describe "UserPages" do
 	
 		before { visit browse_path }
 	
+		it { should have_link("Create a New Quiz", href: new_quiz_path) }
+	
 		describe "quizzes" do
 			it { should have_content(quiz1.name) }
 			it { should have_content(quiz2.name) }
@@ -54,9 +56,8 @@ describe "UserPages" do
 			it { should have_content(quiz2.description) }
 			it { should have_content(quiz1.access_count) }
 			it { should have_content(quiz2.access_count) }
-			
 		end
-	
+		
 	end
 	
 end

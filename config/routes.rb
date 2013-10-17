@@ -6,6 +6,7 @@ QuizGenerator::Application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
+  match '/browse', to: 'static_pages#browse', via: 'get'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

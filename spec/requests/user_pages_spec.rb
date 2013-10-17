@@ -39,4 +39,23 @@ describe "UserPages" do
       specify { expect(user.reload.email).to eq new_email }
     end
   end
+  
+	describe "browse page" do
+		let(:user) { FactoryGirl.create(:user) }
+		let!(:quiz1) { FactoryGirl.create(:quiz, user: user, name: "Quiz One", description: "descroitpion one", access_count: 5) }
+		let!(:quiz2) { FactoryGirl.create(:quiz, user: user, name: "QUiz Two", description: "descroitpion two", access_count: 254) }
+	
+		before { visit browse_path }
+	
+		describe "quizzes" do
+			it { should have_content(quiz1.name) }
+			it { should have_content(quiz2.name) }
+			it { should have_content(quiz1.description) }
+			it { should have_content(quiz2.description) }
+			it { should have_content(quiz1.access_count) }
+			it { should have_content(quiz2.access_count) }
+		end
+	
+	end
+	
 end

@@ -1,0 +1,18 @@
+<%= provide(:title, 'Browse Quizzes') %>
+
+<h1>All Quizzes</h1>
+
+<table class="table table-striped">
+	<tr>
+		<th>Name</th>
+		<th></th>
+		<th>Description</th>
+		<th>Created On</th>
+		<th>Popularity</th>
+	</tr>
+	
+	<% if @quizzes.any? %>
+		<%= render @quizzes %>
+	<% end %>
+	
+</table>

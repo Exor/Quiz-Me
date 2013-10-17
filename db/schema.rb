@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131017025720) do
+ActiveRecord::Schema.define(version: 20131017033602) do
 
   create_table "quizzes", force: true do |t|
     t.integer  "user_id"
-    t.string   "quiz_name"
+    t.string   "name"
     t.string   "description"
     t.string   "help_text"
     t.integer  "access_count"

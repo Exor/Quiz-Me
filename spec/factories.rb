@@ -7,7 +7,7 @@ FactoryGirl.define do
 	end
 	
 	factory :quiz do
-		quiz_name "My Quiz"
+		name "My Quiz"
 		description "This is my quiz."
 		help_text "This is help text."
 		access_count 0

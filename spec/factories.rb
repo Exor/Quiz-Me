@@ -12,4 +12,13 @@ FactoryGirl.define do
 		help_text "This is help text."
 		access_count 0
 	end
+	
+	factory :question do
+		quiz
+		number 1
+		category "tf"
+		content "Your name is Jon."
+		tf_answer true
+		explaination "Because you are the programmer!"
+	end
 end

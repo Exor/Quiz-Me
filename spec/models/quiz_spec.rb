@@ -24,6 +24,7 @@ describe Quiz do
 	it { should respond_to(:allow_review) }
 	it { should respond_to(:show_answer) }
 	it { should respond_to(:show_explaination) }
+	it { should respond_to(:questions) }
 	its(:user) { should eq user }
 	
 	it { should be_valid }
@@ -36,5 +37,25 @@ describe Quiz do
 	describe "when quiz_name is blank" do
 		before { @quiz.name = " " }
 		it { should_not be_valid }
+	end
+	
+	describe "question associations" do
+		before { @quiz.save }
+		let!(:question_1) { FactoryGirl.create(:question, quiz: @quiz, number: 1) }
+		let!(:question_2) { FactoryGirl.create(:question, quiz: @quiz, number: 2) }
+		
+		
+		it "should have the right questions in the right order" do
+		  expect(@quiz.questions.to_a).to eq [question_1, question_2]
+		end
+		
+		it "should destroy associated questions" do
+			questions = @quiz.questions.to_a
+			@quiz.destroy
+			expect(questions).not_to be_empty
+			questions.each do |question|
+				expect(Question.where(id: question.id)).to be_empty
+			end
+		end
 	end
 end

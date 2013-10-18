@@ -3,6 +3,7 @@ QuizGenerator::Application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :quizzes
+  resources :questions, only: [:create, :destroy, :edit, :update]
  
   match '/about', to: 'static_pages#about', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'

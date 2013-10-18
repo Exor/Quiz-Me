@@ -17,8 +17,6 @@ class QuizzesController < ApplicationController
 	end
 
 	def edit
-		#@quiz = Quiz.find(params[:id])
-		#@questions = @quiz.questions
 	end
 	
 	def update

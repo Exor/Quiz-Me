@@ -61,7 +61,6 @@ describe "QuizPages" do
 		before { visit edit_quiz_path(quiz) }
 	
 		it { should have_content(question.number) }
-		it { should have_content(question.category) }
 	
 		it { should have_title("Update") }
 		
@@ -95,6 +94,10 @@ describe "QuizPages" do
 				click_button "Update"
 			end
 			it { should have_content('error') }
+		end
+		
+		describe "question creation" do
+			describe
 		end
 	end
 	

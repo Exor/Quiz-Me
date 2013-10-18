@@ -43,8 +43,9 @@ describe "Authentication" do
 	
     describe "for non-signed-in users" do
 		let(:user) { FactoryGirl.create(:user) }
-
-	  
+		let(:quiz) { FactoryGirl.create(:quiz, user: user) }
+		let(:question) { FactoryGirl.create(:question, quiz: quiz) }
+		
 		describe "in the Users controller" do
 		
 			describe "visiting the edit page" do
@@ -59,9 +60,7 @@ describe "Authentication" do
 		end
 		
 		describe "in the Quizzes controller" do
-			let(:quiz) { FactoryGirl.create(:quiz, user: user) }
-			
-			
+
 			describe "submitting the create action" do
 				before { post quizzes_path }
 				specify { expect(response).to redirect_to(signin_path) }
@@ -81,7 +80,29 @@ describe "Authentication" do
 				before { patch quiz_path(quiz) }
 				specify { expect(response).to redirect_to(signin_path) }
 			end
+		end
+
+		describe "in the Questions controller" do
+
+			describe "submitting the create action" do
+				before { post questions_path }
+				specify { expect(response).to redirect_to(signin_path) }
+			end
+			
+			describe "Submitting the delete action" do
+				before { delete question_path(question) }
+				specify { expect(response).to redirect_to(signin_path) }
+			end
 		
+			describe "visiting the edit page" do
+				before { visit edit_question_path(question) }
+				it { should have_title('Sign in') }
+			end
+
+			describe "submitting to the update action" do
+				before { patch question_path(question) }
+				specify { expect(response).to redirect_to(signin_path) }
+			end
 		end
     end
 	

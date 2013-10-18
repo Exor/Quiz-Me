@@ -1,5 +1,5 @@
-<div class="row">
-	<%= form_for(@quiz) do |f| %>
+<%= form_for(@quiz) do |f| %>
+	<div class="row">
 		<%= render 'shared/error_messages', object: f.object %>
 		<div class="span5">
 			<fieldset>
@@ -27,5 +27,34 @@
 		<div class="span3">
 			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-large btn-prmary" %>
 		</div>
-	<% end %>
-</div>
+	</div>
+	<div class="row">
+		<div class="span4 offset 4">
+			<% @quiz.questions.each do |question| %>
+				<%= fields_for(question) do |u| %>
+					<fieldset>
+						<h2>Question <%= question.number %></h2>
+							<%= u.label :category, "Type" %>
+							<%= u.select :category, [["tf", 1], ["fill",2], ["multi",3]] %>
+
+							<%= u.label :content, "Question" %>
+							<%= u.text_field :content %>
+							
+							<%= u.label :fill_answer, "Fill Answer" %>
+							<%= u.text_field :fill_answer %>
+							
+							<%= u.label :tf_answer, "True False Answer" %>
+							<%= u.radio_button :tf_answer, 't' %>True
+							<%= u.radio_button :tf_answer, 'f' %>False
+							
+							<%= u.label :multiple_answer, "Multiple Choice Answer" %>
+							<%= u.text_field :multiple_answer %>
+							
+							<%= u.label :explaination, "Explanation" %>
+							<%= u.text_field :explaination %>							
+					</fieldset>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+<% end %>

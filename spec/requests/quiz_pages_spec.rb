@@ -57,7 +57,11 @@ describe "QuizPages" do
 	
 	describe "quiz edit page" do
 		let!(:quiz) { FactoryGirl.create(:quiz, user: user) }
+		let!(:question) { FactoryGirl.create(:question, quiz: quiz) }
 		before { visit edit_quiz_path(quiz) }
+	
+		it { should have_content(question.number) }
+		it { should have_content(question.category) }
 	
 		it { should have_title("Update") }
 		

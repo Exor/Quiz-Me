@@ -2,6 +2,7 @@
 	<%= form_for(@quiz) do |f| %>
 		<%= render 'shared/error_messages', object: f.object %>
 		<div class="span5">
+			<fieldset>
 			<%= f.label :name, "Title" %>
 			<%= f.text_field :name, placeholder: "Name of your quiz" %>
 			
@@ -10,9 +11,18 @@
 			
 			<%= f.label :help_text, "Help Text" %>
 			<%= f.text_field :help_text, placeholder: "Give a few hints for the quiz taker" %>
+			</fieldset>
 		</div>
 		<div class="span4">
-			Quiz options go here
+			<fieldset>
+				<h2>Options</h2>
+				<%= f.check_box :random, 		id: "random" %>Questions are in random order<br />
+				<%= f.check_box :allow_restart, id: "allow_restart" %>Allow users to restart the quiz<br />
+				<%= f.check_box :allow_delete, 	id: "allow_delete" %>Allow users to delete the quiz<br />
+				<%= f.check_box :allow_review, 	id: "allow_review" %>Allow users to review the quiz<br />
+				<%= f.check_box :show_answer, 	id: "show_answer" %>Show the correct answer when users submit their answer<br />
+				<%= f.check_box :show_explaination, id: "show_explaination" %>Show the answer explaination when users submit their answer<br />
+			</fieldset>
 		</div>
 		<div class="span3">
 			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-large btn-prmary" %>

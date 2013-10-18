@@ -18,6 +18,12 @@ describe Quiz do
 	it { should respond_to(:help_text) }
 	it { should respond_to(:access_count) }
 	it { should respond_to(:user) }
+	it { should respond_to(:random) }
+	it { should respond_to(:allow_restart) }
+	it { should respond_to(:allow_delete) }
+	it { should respond_to(:allow_review) }
+	it { should respond_to(:show_answer) }
+	it { should respond_to(:show_explaination) }
 	its(:user) { should eq user }
 	
 	it { should be_valid }

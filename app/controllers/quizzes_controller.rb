@@ -36,7 +36,15 @@ class QuizzesController < ApplicationController
 	private
 	
 		def quiz_params
-			params.require(:quiz).permit(:name, :description, :help_text)
+			params.require(:quiz).permit(:name, 
+										 :description, 
+										 :help_text, 
+										 :random, 
+										 :allow_restart,
+										 :allow_delete,
+										 :allow_review,
+										 :show_answer,
+										 :show_explaination)
 		end	
 		
 		def correct_user

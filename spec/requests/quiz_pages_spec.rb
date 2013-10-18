@@ -34,6 +34,7 @@ describe "QuizPages" do
 		before { visit new_quiz_path }
 		
 		it { should have_title("Create a New Quiz") }
+		it { should have_content("Title") }
 		
 		describe "with invalid information" do
 			it "should not create a quiz" do
@@ -43,6 +44,13 @@ describe "QuizPages" do
 			describe "error message" do
 				before { click_button "Create" }
 				it { should have_content('error') }
+			end
+		end
+		
+		describe "with valid information" do
+			before { fill_in "Title", with: 'Quiz Title' }
+			it "should create a quiz" do
+				expect {click_button "Create"}.to change(Quiz, :count).by(1)
 			end
 		end
 	end
@@ -58,6 +66,25 @@ describe "QuizPages" do
 			it { should have_content('Quiz updated') }
 		end
 		
+		describe "changing checkboxes" do
+			before do 
+				check "random"
+				check "allow_restart"
+				check "allow_delete"
+				check "allow_review"
+				check "show_answer"
+				check "show_explaination"
+				click_button "Update"
+			end
+			it { should have_content('Quiz updated') }
+			specify { expect(quiz.reload.random).to eq true }
+			specify { expect(quiz.reload.allow_restart).to eq true }
+			specify { expect(quiz.reload.allow_delete).to eq true }
+			specify { expect(quiz.reload.allow_review).to eq true }
+			specify { expect(quiz.reload.show_answer).to eq true }
+			specify { expect(quiz.reload.show_explaination).to eq true }
+		end
+				
 		describe "with invalid information" do
 			before do
 				fill_in "Title", with: ' '

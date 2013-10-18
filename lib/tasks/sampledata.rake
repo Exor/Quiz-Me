@@ -15,7 +15,26 @@ namespace :db do
 														description: description, 
 														help_text: help_text) }
 		end
-				 
+		users.each do |user|
+			quizzes = user.quizzes.all()
+			quizzes.each do |quiz| 
+				quiz.questions.create!(number: 1,
+									   category: "fill",
+									   content: Faker::Lorem.sentence(5),
+									   fill_answer: Faker::Lorem.sentence(1),
+									   explaination: Faker::Lorem.sentence(5))
+				quiz.questions.create!(number: 2,
+									   category: "tf",
+									   content: Faker::Lorem.sentence(5),
+									   tf_answer: "f",
+									   explaination: Faker::Lorem.sentence(5))
+				quiz.questions.create!(number: 3,
+									   category: "multi",
+									   content: Faker::Lorem.sentence(5),
+									   multiple_answer: Faker::Lorem.sentence(1),
+									   explaination: Faker::Lorem.sentence(5))									   
+			end
+		end	
 	end
 	
 

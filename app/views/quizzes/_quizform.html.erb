@@ -35,7 +35,7 @@
 					<fieldset>
 						<h2>Question <%= question.number %></h2>
 							<%= u.label :category, "Type" %>
-							<%= u.select :category, [["tf", 1], ["fill",2], ["multi",3]] %>
+							<%= u.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice", "multi"]] %>
 
 							<%= u.label :content, "Question" %>
 							<%= u.text_field :content %>

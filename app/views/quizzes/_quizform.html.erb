@@ -31,7 +31,7 @@
 	<div class="row">
 		<div class="span4 offset 4">
 			<% @quiz.questions.each do |question| %>
-				<%= fields_for(question) do |u| %>
+				<%= f.fields_for :questions, question do |u| %>
 					<fieldset>
 						<h2>Question <%= question.number %></h2>
 							<%= u.label :category, "Type" %>
@@ -51,7 +51,9 @@
 							<%= u.text_field :multiple_answer %>
 							
 							<%= u.label :explaination, "Explanation" %>
-							<%= u.text_field :explaination %>							
+							<%= u.text_field :explaination %>
+
+												
 					</fieldset>
 				<% end %>
 			<% end %>

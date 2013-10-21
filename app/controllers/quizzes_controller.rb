@@ -4,6 +4,7 @@ class QuizzesController < ApplicationController
 	
 	def new
 		@quiz = current_user.quizzes.build if signed_in?
+		@question = @quiz.questions.build
 	end
 	
 	def create
@@ -44,7 +45,16 @@ class QuizzesController < ApplicationController
 										 :allow_delete,
 										 :allow_review,
 										 :show_answer,
-										 :show_explaination)
+										 :show_explaination,
+										 :questions_attributes => [:id,
+										 						   :content,
+										 						   :number,
+										 						   :category,
+										 						   :fill_answer,
+										 						   :tf_answer,
+										 						   :multiple_answer,
+										 						   :explaination
+										 							])
 		end	
 		
 		def correct_user

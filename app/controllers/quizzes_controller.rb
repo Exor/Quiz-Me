@@ -53,7 +53,8 @@ class QuizzesController < ApplicationController
 										 						   :fill_answer,
 										 						   :tf_answer,
 										 						   :multiple_answer,
-										 						   :explaination
+										 						   :explaination,
+										 						   :_destroy
 										 							])
 		end	
 		

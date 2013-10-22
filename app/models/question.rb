@@ -1,7 +1,5 @@
 class Question < ActiveRecord::Base
 	belongs_to :quiz
-	validates :quiz_id, presence: true
-	validates :number, presence: true
 	validates :category, 
 				presence: true, 
 				format: {with: /(^tf\z)|(^fill\z)|(^multi\z)/i }

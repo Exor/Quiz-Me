@@ -32,31 +32,10 @@
 		<div class="span4 offset 4">
 			<% @quiz.questions.each do |question| %>
 				<%= f.fields_for :questions, question do |u| %>
-					<fieldset>
-						<h2>Question <%= question.number %></h2>
-							<%= u.label :category, "Type" %>
-							<%= u.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice", "multi"]] %>
-
-							<%= u.label :content, "Question" %>
-							<%= u.text_field :content %>
-							
-							<%= u.label :fill_answer, "Fill Answer" %>
-							<%= u.text_field :fill_answer %>
-							
-							<%= u.label :tf_answer, "True False Answer" %>
-							<%= u.radio_button :tf_answer, 't' %>True
-							<%= u.radio_button :tf_answer, 'f' %>False
-							
-							<%= u.label :multiple_answer, "Multiple Choice Answer" %>
-							<%= u.text_field :multiple_answer %>
-							
-							<%= u.label :explaination, "Explanation" %>
-							<%= u.text_field :explaination %>
-
-							<br =>Delete<%= u.check_box :_destroy %>
-					</fieldset>
+					<%= render 'question_fields', :f => u %>
 				<% end %>
 			<% end %>
+			<%= link_to_function "Add Question", 'add_question(this)' %>
 		</div>
 	</div>
 <% end %>

@@ -1,0 +1,24 @@
+<fieldset class="fields">
+	<h2>Question</h2>
+		<%= f.hidden_field :_destroy %>
+		<%= link_to_function "Remove Question", "remove_fields(this)" %>
+		
+		<%= f.label :category, "Type" %>
+		<%= f.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice", "multi"]] %>
+
+		<%= f.label :content, "Question" %>
+		<%= f.text_field :content %>
+		
+		<%= f.label :fill_answer, "Fill Answer" %>
+		<%= f.text_field :fill_answer %>
+		
+		<%= f.label :tf_answer, "True False Answer" %>
+		<%= f.radio_button :tf_answer, 't' %>True
+		<%= f.radio_button :tf_answer, 'f' %>False
+		
+		<%= f.label :multiple_answer, "Multiple Choice Answer" %>
+		<%= f.text_field :multiple_answer %>
+		
+		<%= f.label :explaination, "Explanation" %>
+		<%= f.text_field :explaination %>
+</fieldset>

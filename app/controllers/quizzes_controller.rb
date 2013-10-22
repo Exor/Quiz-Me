@@ -4,7 +4,6 @@ class QuizzesController < ApplicationController
 	
 	def new
 		@quiz = current_user.quizzes.build if signed_in?
-		@question = @quiz.questions.build
 	end
 	
 	def create

@@ -16,7 +16,8 @@ function add_question(link){
 	strVar += "<option value=\"\">-- Choose a Type --<\/option>";
 	strVar += "<option value=\"tf\">True\/False<\/option>";
 	strVar += "<option value=\"fill\">Fill in the Blank<\/option>";
-	strVar += "<option value=\"multi\">Multiple Choice<\/option><\/select>";
+	strVar += "<option value=\"multi\">Multiple Choice Dropdown<\/option>";
+	strVar += "<option value=\"multiList\">Multiple Choice Radio Button<\/option><\/select>";
 	strVar += "<label for=\"quiz_questions_attributes_";strVar += number;strVar += "_content\">Question<\/label>";
 	strVar += "<input id=\"quiz_questions_attributes_";strVar += number;strVar += "_content\" name=\"quiz[questions_attributes][";strVar += number;strVar += "][content]\" type=\"text\" \/>";
 	strVar += "<label class=\"fillanswer\" for=\"quiz_questions_attributes_";strVar += number;strVar += "_fill_answer\">Fill Answer<\/label>";
@@ -40,7 +41,7 @@ function add_question(link){
 
 function changeType(select)
 {
-	hideQuestions();
+	hideQuestions()
 
 	if (select.selectedIndex==1)
 	{//True/False
@@ -50,7 +51,7 @@ function changeType(select)
 	{//Fill in the blank
 		$(select).nextAll(".fillanswer").show();
 	}
-	else if (select.selectedIndex==3)
+	else if (select.selectedIndex==3 || select.selectedIndex==4)
 	{//Multiple Choice
 		$(select).nextAll(".multianswer").show();
 	}

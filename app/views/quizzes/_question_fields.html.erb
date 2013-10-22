@@ -4,7 +4,7 @@
 		<%= link_to_function "Remove Question", "remove_fields(this)" %>
 		
 		<%= f.label :category, "Type" %>
-		<%= f.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice", "multi"]] %>
+		<%= f.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], :onclick => "changeType(this)" %>
 
 		<%= f.label :content, "Question" %>
 		<%= f.text_field :content %>

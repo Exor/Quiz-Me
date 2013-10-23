@@ -61,6 +61,11 @@ describe "Authentication" do
 		
 		describe "in the Quizzes controller" do
 
+			describe "visiting the show quiz page" do
+				before { visit quiz_path(quiz)}
+				it {should have_title("Take")}
+			end
+
 			describe "submitting the create action" do
 				before { post quizzes_path }
 				specify { expect(response).to redirect_to(signin_path) }

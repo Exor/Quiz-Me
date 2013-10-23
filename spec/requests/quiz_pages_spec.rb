@@ -28,6 +28,9 @@ describe "QuizPages" do
 			it { should have_link("Edit", href: edit_quiz_path(quiz)) }
 		end
 		
+		describe "quiz take button" do
+			it { should have_link("Take", href: quiz_path(quiz)) }
+		end
 	end
 	
 	describe "quiz create page" do
@@ -47,10 +50,10 @@ describe "QuizPages" do
 			end
 		end
 		
-		describe "with valid information" do
+		describe "with no question" do
 			before { fill_in "Title", with: 'Quiz Title' }
-			it "should create a quiz" do
-				expect {click_button "Create"}.to change(Quiz, :count).by(1)
+			it "should not create a quiz" do
+				expect {click_button "Create"}.not_to change(Quiz, :count)
 			end
 		end
 	end

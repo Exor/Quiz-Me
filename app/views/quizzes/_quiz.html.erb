@@ -2,7 +2,7 @@
 	<td><%= quiz.name %></td>
 	<td>
 		<div class="btn-group">
-			<button type="button" class="btn btn-default">Take</button>
+			<%= link_to "Take",			quiz_path(quiz), class: "btn btn-default" %>
 			<button type="button" class="btn btn-default">Share</button>
 			<% if signed_in? %>
 				<%= link_to "Edit",		edit_quiz_path(quiz), class: "btn btn-default" %>

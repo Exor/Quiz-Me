@@ -3,6 +3,8 @@ class QuizzesController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit, :update]
 	
 	def show
+		gon.quiz = current_user.quizzes.find(params[:id])
+		gon.questions = current_user.quizzes.find(params[:id]).questions
 	end
 
 	def new

@@ -1,8 +1,4 @@
-﻿function alertme(){
-	alert('omg it works');
-}
-
-/*
+﻿/*
 * jQuizMe - jQuery quiz plugin
 *
 * @version 2.2.1

@@ -81,29 +81,6 @@ describe "Authentication" do
 				specify { expect(response).to redirect_to(signin_path) }
 			end
 		end
-
-		describe "in the Questions controller" do
-
-			describe "submitting the create action" do
-				before { post questions_path }
-				specify { expect(response).to redirect_to(signin_path) }
-			end
-			
-			describe "Submitting the delete action" do
-				before { delete question_path(question) }
-				specify { expect(response).to redirect_to(signin_path) }
-			end
-		
-			describe "visiting the edit page" do
-				before { visit edit_question_path(question) }
-				it { should have_title('Sign in') }
-			end
-
-			describe "submitting to the update action" do
-				before { patch question_path(question) }
-				specify { expect(response).to redirect_to(signin_path) }
-			end
-		end
     end
 	
 	describe "as wrong user" do

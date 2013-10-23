@@ -18,7 +18,7 @@ FactoryGirl.define do
 		number 1
 		category "tf"
 		content "Your name is Jon."
-		tf_answer true
+		tf_answer "t"
 		explaination "Because you are the programmer!"
 	end
 end

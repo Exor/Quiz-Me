@@ -18,5 +18,5 @@ end
 	end
 	
 	def multi_question?
-		category == "multi" || "multiList"
+		category == "multi" || category == "multiList"
 	end

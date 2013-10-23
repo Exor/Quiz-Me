@@ -23,16 +23,6 @@ describe Question do
 	it { should respond_to(:explaination) }
 	its(:quiz) { should eq quiz }
 	it { should be_valid }
-	
-	describe "when quiz_id is not present" do
-		before { @question.quiz_id = nil }
-		it { should_not be_valid }
-	end
-
-	describe "when number is blank" do
-		before { @question.number = nil }
-		it { should_not be_valid }
-	end
 
 	describe "when category is blank" do
 		before { @question.category = nil }

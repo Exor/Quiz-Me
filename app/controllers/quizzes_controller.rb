@@ -5,6 +5,10 @@ class QuizzesController < ApplicationController
 	def show
 		gon.quiz = Quiz.find(params[:id])
 		gon.questions = Quiz.find(params[:id]).questions
+		gon.answers = []
+		Quiz.find(params[:id]).questions.each do |question|
+			gon.answers.push(question.answers)
+		end
 	end
 
 	def new

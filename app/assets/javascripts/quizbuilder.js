@@ -71,10 +71,10 @@ function showQuiz(button){
 }
 
 jQuery(function(){
-        console.log(gon.quiz);
-        console.log(gon.questions);
+        //console.log(gon.quiz);
+        //console.log(gon.questions);
         //console.log(quiz);
-        console.log(gon.answers);
+        //console.log(gon.answers);
 });
 
 function createQuizObject(){

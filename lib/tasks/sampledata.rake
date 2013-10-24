@@ -27,6 +27,9 @@ namespace :db do
 				quiz.questions.create!(category: "multi",
 									   content: Faker::Lorem.sentence(5),
 									   explanation: Faker::Lorem.sentence(5))								   
+				quiz.questions.create!(category: "multiList",
+									   content: Faker::Lorem.sentence(5),
+									   explanation: Faker::Lorem.sentence(5))	
 			end
 		end	
 
@@ -42,6 +45,11 @@ namespace :db do
 						question.answers.create!(content: 't')
 					end
 					if question.category == "multi"
+						4.times do 
+							question.answers.create!(content: Faker::Lorem.sentence(1))
+						end
+					end
+					if question.category == "multiList"
 						4.times do 
 							question.answers.create!(content: Faker::Lorem.sentence(1))
 						end

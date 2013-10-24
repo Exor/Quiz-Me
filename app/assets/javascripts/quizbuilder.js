@@ -43,7 +43,7 @@ function showQuiz(button){
 		}
 	}
 
-	options = { allRandom: 		gon.quiz.random,
+	options = { allRandom: 		true, //gon.quiz.random,
 				help: 			gon.quiz.help_text,
 				intro: 			gon.quiz.description,
 				review: 		gon.quiz.allow_review,

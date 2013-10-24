@@ -21,8 +21,16 @@ function showQuiz(button){
 							});
 			break;
 		case "tf":
-			quiz.tf.push({ques   : gon.questions[i].content, 
-						  ans    :  gon.questions[i].tf_answer,
+			var answer = 'true';
+			var subanswer = [null, 'false'];
+			if (gon.questions[i].tf_answer == 'f')
+				{
+					answer = 'false';
+					subanswer = ['true', null];
+				}
+			quiz.multiList.push({ques   : gon.questions[i].content, 
+						  ans    : answer,
+						  ansSel : subanswer,
 						  ansInfo: gon.questions[i].explaination
 						});
 			break;
@@ -34,21 +42,6 @@ function showQuiz(button){
 			break;
 		}
 	}
-
-	var quizMulti = {
-	        multiList:[
-	                { ques: "opposite / hypotonus", ans: "sin", ansSel : "tan" },
-	                { ques: "adjacent / hypotonus", ans: "cos", ansSel: "tan" }
-	        ],
-	        tf:[
-	                { ques: "cos( 30 degrees )", ans: "&#8730;3 / 2", ansSel: [ " &#8730;2 / 3", "1/4" ] },
-	                { ques: "sin( 60 degrees )", ans: "&#8730;3 / 2", ansSel: [ "1/2", "&#8730;2" ] }       
-	        ],
-	        fill:[
-	                { ques: "1/tan", ans: "cot" },
-	                { ques: "1/cos", ans: "sec" }
-	        ]
-	};
 
 	options = { allRandom: 		gon.quiz.random,
 				help: 			gon.quiz.help_text,
@@ -87,7 +80,7 @@ function createQuizObject(){
 				types.multiList = [];
 				break;
 			case("tf"):
-				types.tf = [];
+				types.multiList = [];
 				break;
 		}
 	}

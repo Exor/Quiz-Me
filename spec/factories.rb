@@ -17,11 +17,11 @@ FactoryGirl.define do
 		quiz
 		category "tf"
 		content "Is your name foobar?"
+		explanation "Because you are a program!"
 	end
 
 	factory :answer do
 		question
 		content "true"
-		explanation "Because you are a program!"
 	end
 end

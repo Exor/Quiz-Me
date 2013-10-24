@@ -18,4 +18,4 @@ FB Twitter Google+ Share links
 unobtrusive javascript on _quizform
 change error messages on quizform
 fix explanation spelling (explaination => explanation)
-create answers database
+- create answers database

@@ -14,6 +14,7 @@ describe Question do
 	it { should respond_to(:content) }
 	it { should respond_to(:quiz_id) }
 	it { should respond_to(:category) }
+	it { should respond_to(:explanation) }
 	its(:quiz) { should eq quiz }
 	it { should be_valid }
 

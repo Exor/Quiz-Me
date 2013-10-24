@@ -14,7 +14,6 @@ describe Answer do
 	
 	it { should respond_to(:content) }
 	it { should respond_to(:question_id) }
-	it { should respond_to(:explanation) }
 	its(:question) { should eq question }
 	it { should be_valid }
 

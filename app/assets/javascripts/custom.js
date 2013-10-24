@@ -12,7 +12,7 @@ function add_question(link){
 	strVar += "<input id=\"quiz_questions_attributes_";strVar += number;strVar += "__destroy\" name=\"quiz[questions_attributes][";strVar += number;strVar += "][_destroy]\" type=\"hidden\" value=\"false\" \/>";
 	strVar += "<a href=\"#\" onclick=\"remove_fields(this); return false;\">Remove Question<\/a>";
 	strVar += "<label for=\"quiz_questions_attributes_";strVar += number;strVar += "_category\">Type<\/label>";
-	strVar += "<select id=\"quiz_questions_attributes_";strVar += number;strVar += "_category\" name=\"quiz[questions_attributes][";strVar += number;strVar += "][category]\" onChange=\"changeType(this)\">";
+	strVar += "<select class=\"questiontype\" id=\"quiz_questions_attributes_";strVar += number;strVar += "_category\" name=\"quiz[questions_attributes][";strVar += number;strVar += "][category]\" onChange=\"changeType(this)\">";
 	strVar += "<option value=\"\">-- Choose a Type --<\/option>";
 	strVar += "<option value=\"tf\">True\/False<\/option>";
 	strVar += "<option value=\"fill\">Fill in the Blank<\/option>";
@@ -36,29 +36,39 @@ function add_question(link){
 
 	$(link).before(strVar);
 
-	hideQuestions();
+	hideAnswers();
 }
 
 function changeType(select)
 {
-	hideQuestions()
-
+	if (select.selectedIndex==0)
+	{//Choose a type
+		$(select).nextAll(".tfanswer").hide();
+		$(select).nextAll(".fillanswer").hide();
+		$(select).nextAll(".multianswer").hide();
+	}
 	if (select.selectedIndex==1)
 	{//True/False
 		$(select).nextAll(".tfanswer").show();
+		$(select).nextAll(".fillanswer").hide();
+		$(select).nextAll(".multianswer").hide();
 	}
 	else if (select.selectedIndex==2)
 	{//Fill in the blank
 		$(select).nextAll(".fillanswer").show();
+		$(select).nextAll(".multianswer").hide();
+		$(select).nextAll(".tfanswer").hide();  
 	}
 	else if (select.selectedIndex==3 || select.selectedIndex==4)
 	{//Multiple Choice
 		$(select).nextAll(".multianswer").show();
+				$(select).nextAll(".tfanswer").hide();
+		$(select).nextAll(".fillanswer").hide();
 	}
 };
 
-function hideQuestions() {
-	$(".fillanswer").hide();
-	$(".multianswer").hide();
-	$(".tfanswer").hide();  
+function hideAnswers() {
+	var selectors = $('.questiontype')
+	for (i=0;i<selectors.length;i++)
+		{changeType(selectors[i]);}
 }

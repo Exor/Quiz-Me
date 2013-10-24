@@ -14,21 +14,7 @@
 			</fieldset>
 		</div>
 		<div class="span4">
-			<fieldset>
-				<h2>Options</h2>
-				<%# f.label     :random, "Questions are in random order" %>
-				<%# f.check_box :random, 		id: "random" %>
-				<%= f.label     :allow_restart, "Allow users to restart the quiz" %>
-				<%= f.check_box :allow_restart, id: "allow_restart" %>
-				<%= f.label     :allow_delete, "Allow users to delete the quiz" %>
-				<%= f.check_box :allow_delete, 	id: "allow_delete" %>
-				<%= f.label     :allow_review, "Allow users to review the quiz" %>
-				<%= f.check_box :allow_review, 	id: "allow_review" %>
-				<%= f.label     :show_answer, "Show the correct answer when users submit their answer" %>
-				<%= f.check_box :show_answer, 	id: "show_answer" %>
-				<%= f.label     :show_explaination, "Show the answer explaination when users submit their answer" %>
-				<%= f.check_box :show_explaination, id: "show_explaination" %>
-			</fieldset>
+			<%= render 'option_fields', :f => f %>
 		</div>
 		<div class="span3">
 			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-large btn-prmary" %>
@@ -45,3 +31,4 @@
 		</div>
 	</div>
 <% end %>
+<script>hideAnswers()</script>

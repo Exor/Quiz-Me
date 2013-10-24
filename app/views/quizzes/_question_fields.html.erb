@@ -4,21 +4,23 @@
 		<%= link_to_function "Remove Question", "remove_fields(this)" %>
 		
 		<%= f.label :category, "Type" %>
-		<%= f.select :category, [['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], :onclick => "changeType(this)" %>
+		<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype" %>
 
 		<%= f.label :content, "Question" %>
 		<%= f.text_field :content %>
 		
-		<%= f.label :fill_answer, "Fill Answer" %>
-		<%= f.text_field :fill_answer %>
-		
-		<%= f.label :tf_answer, "True False Answer" %>
-		<%= f.radio_button :tf_answer, 't' %>True
-		<%= f.radio_button :tf_answer, 'f' %>False
-		
-		<%= f.label :multiple_answer, "Multiple Choice Answer" %>
-		<%= f.text_field :multiple_answer %>
-		
+		<%= f.label :fill_answer, "Fill Answer", class: "fillanswer" %>
+		<%= f.text_field :fill_answer, class: "fillanswer" %>
+
+		<p class="tfanswer">
+			<%= f.label :tf_answer, "True False Answer" %>
+			<%= f.radio_button :tf_answer, 't' %>True
+			<%= f.radio_button :tf_answer, 'f' %>False
+		</p>
+
+		<%= f.label :multiple_answer, "Multiple Choice Correct Answer", class: "multianswer" %>
+		<%= f.text_field :multiple_answer, class: "multianswer" %>
+
 		<%= f.label :explaination, "Explanation" %>
 		<%= f.text_field :explaination %>
 </fieldset>

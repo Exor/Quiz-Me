@@ -9,7 +9,10 @@ This is a web application to generate online quizzes through an easy-to-use GUI.
 Tasks to finish up
 
 Javascript on new quiz page
-Remove 'question number' from db
+- Quizzes always random
+- Remove 'question number' from db
 quiz must have at least one question
 multiple choice add/remove answer
 FB Twitter Google+ Share links
+- Fix true/false answers
+unobtrusive javascript on _quizform

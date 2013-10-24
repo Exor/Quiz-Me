@@ -6,7 +6,6 @@ describe Question do
 
 	before do
 		@question = Question.new(quiz_id: quiz.id,
-				number: 1,
 				category: "tf",
 				content: "Your name is Jon.",
 				tf_answer: true,

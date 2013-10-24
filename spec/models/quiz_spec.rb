@@ -41,8 +41,8 @@ describe Quiz do
 	
 	describe "question associations" do
 		before { @quiz.save }
-		let!(:question_1) { FactoryGirl.create(:question, quiz: @quiz, number: 1) }
-		let!(:question_2) { FactoryGirl.create(:question, quiz: @quiz, number: 2) }
+		let!(:question_1) { FactoryGirl.create(:question, quiz: @quiz) }
+		let!(:question_2) { FactoryGirl.create(:question, quiz: @quiz) }
 		
 		
 		it "should have the right questions in the right order" do

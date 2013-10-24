@@ -15,7 +15,6 @@ FactoryGirl.define do
 	
 	factory :question do
 		quiz
-		number 1
 		category "tf"
 		content "Your name is Jon."
 		tf_answer "t"

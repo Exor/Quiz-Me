@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018020027) do
+ActiveRecord::Schema.define(version: 20131024013235) do
 
   create_table "questions", force: true do |t|
     t.integer  "quiz_id"
-    t.integer  "number"
     t.string   "category"
     t.string   "content"
     t.string   "fill_answer"
@@ -26,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131018020027) do
     t.datetime "updated_at"
   end
 
-  add_index "questions", ["quiz_id", "number"], name: "index_questions_on_quiz_id_and_number"
+  add_index "questions", ["quiz_id"], name: "index_questions_on_quiz_id_and_number"
 
   create_table "quizzes", force: true do |t|
     t.integer  "user_id"

@@ -63,8 +63,6 @@ describe "QuizPages" do
 		let!(:question) { FactoryGirl.create(:question, quiz: quiz) }
 		before { visit edit_quiz_path(quiz) }
 	
-		it { should have_content(question.number) }
-	
 		it { should have_title("Update") }
 		
 		describe "with valid information" do
@@ -74,7 +72,6 @@ describe "QuizPages" do
 		
 		describe "changing checkboxes" do
 			before do 
-				check "random"
 				check "allow_restart"
 				check "allow_delete"
 				check "allow_review"
@@ -83,7 +80,6 @@ describe "QuizPages" do
 				click_button "Update"
 			end
 			it { should have_content('Quiz updated') }
-			specify { expect(quiz.reload.random).to eq true }
 			specify { expect(quiz.reload.allow_restart).to eq true }
 			specify { expect(quiz.reload.allow_delete).to eq true }
 			specify { expect(quiz.reload.allow_review).to eq true }

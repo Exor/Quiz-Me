@@ -59,8 +59,11 @@ class QuizzesController < ApplicationController
 										 						   :tf_answer,
 										 						   :multiple_answer,
 										 						   :explaination,
-										 						   :_destroy
-										 							])
+										 						   :_destroy,
+										 						   :answers_attributes => [:id,
+										 						   						   :content,
+										 						   						   :explanation
+										 						   										]])
 		end	
 		
 		def correct_user

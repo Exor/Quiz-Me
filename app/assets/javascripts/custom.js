@@ -31,26 +31,26 @@ function add_question(link){
 
 	strVar += "<fieldset class=\"answer_fields\">";
 
-	strVar += "<input class=\"add_remove_answer_link\" id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers__destroy\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][_destroy]\" type=\"hidden\" value=\"false\" \/>";
-	strVar += "<a class=\"add_remove_answer_link\" href=\"#\" onclick=\"remove_answer(this); return false;\">Remove Answer<\/a>";
+	//strVar += "<input class=\"add_remove_answer_link\" id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0__destroy\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers_attributes][0][_destroy]\" type=\"hidden\" value=\"false\" \/>";
+	//strVar += "<a class=\"add_remove_answer_link\" href=\"#\" onclick=\"remove_answer(this); return false;\">Remove Answer<\/a>";
 	
 	strVar += "<p class=\"fillanswer\">";
-	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content\">Answer<\/label>";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][content]\" type=\"text\" \/>";
+	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0_content\">Answer<\/label>";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0_content\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers_attributes][0][content]\" type=\"text\" \/>";
 	strVar += "<\/p>";
 	
 	strVar += "<p class=\"tfanswer\">";
-	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content\">Answer<\/label>";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content_t\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][content]\" type=\"radio\" value=\"t\" \/>True";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content_f\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][content]\" type=\"radio\" value=\"f\" \/>False";
+	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0_content\">Answer<\/label>";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0_content_t\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers_attributes][0][content]\" type=\"radio\" value=\"t\" \/>True";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_attributes_0_content_f\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers_attributes][0][content]\" type=\"radio\" value=\"f\" \/>False";
 	strVar += "<\/p>";
 
 	strVar += "<\/fieldset>";
 
 	strVar += "<a class=\"add_remove_answer_link\" href=\"#\" onclick=\"add_answer(this, ";strVar += index;strVar += "); return false;\">Add Answer<\/a>";
 
-	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_explaination\">Explanation<\/label>";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_explaination\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][explaination]\" type=\"text\" \/>";
+	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_explanation\">Explanation<\/label>";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_explanation\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][explanation]\" type=\"text\" \/>";
 	strVar += "<\/fieldset>";
 
 
@@ -59,17 +59,18 @@ function add_question(link){
 	hideAnswers();
 }
 
-function add_answer(link, index){
+function add_answer(link, question_index){
+	var answer_index = $("label:contains('Answer')").get().length;	
 
 	var strVar="";
 	strVar += "<fieldset class=\"answer_fields\">";
 
-	strVar += "<input class=\"add_remove_answer_link\" id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers__destroy\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][_destroy]\" type=\"hidden\" value=\"false\" \/>";
+	strVar += "<input class=\"add_remove_answer_link\" id=\"quiz_questions_attributes_";strVar += question_index;strVar += "_answers_attributes_";strVar += answer_index;strVar += "__destroy\" name=\"quiz[questions_attributes][";strVar += question_index;strVar += "][answers_attributes][";strVar += answer_index;strVar += "][_destroy]\" type=\"hidden\" value=\"false\" \/>";
 	strVar += "<a class=\"add_remove_answer_link\" href=\"#\" onclick=\"remove_answer(this); return false;\">Remove Answer<\/a>";
-	
+
 	strVar += "<p class=\"fillanswer\">";
-	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content\">Answer<\/label>";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_answers_content\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][answers][content]\" type=\"text\" \/>";
+	strVar += "<label for=\"quiz_questions_attributes_";strVar += question_index;strVar += "_answers_attributes_";strVar += answer_index;strVar += "_content\">Answer<\/label>";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += question_index;strVar += "_answers_attributes_";strVar += answer_index;strVar += "_content\" name=\"quiz[questions_attributes][";strVar += question_index;strVar += "][answers_attributes][";strVar += answer_index;strVar += "][content]\" type=\"text\" \/>";
 	strVar += "<\/p>";
 
 	strVar += "<\/fieldset>";

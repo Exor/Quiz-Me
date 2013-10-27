@@ -57,16 +57,12 @@ class QuizzesController < ApplicationController
 										 :show_explaination,
 										 :questions_attributes => [:id,
 										 						   :content,
-										 						   :number,
 										 						   :category,
-										 						   :fill_answer,
-										 						   :tf_answer,
-										 						   :multiple_answer,
-										 						   :explaination,
 										 						   :_destroy,
 										 						   :answers_attributes => [:id,
 										 						   						   :content,
-										 						   						   :explanation
+										 						   						   :explanation,
+										 						   						   :_destroy
 										 						   										]])
 		end	
 		

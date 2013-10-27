@@ -17,5 +17,6 @@ FB Twitter Google+ Share links
 - Fix true/false answers
 unobtrusive javascript on _quizform
 change error messages on quizform
-fix explanation spelling (explaination => explanation)
+- fix explanation spelling (explaination => explanation)
 - create answers database
+increase quiz popularity count when user takes (Finishes?) a quiz

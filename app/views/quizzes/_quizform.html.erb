@@ -22,13 +22,13 @@
 	</div>
 	<div class="row">
 		<div class="span4 offset4">
-			<% @quiz.questions.each do |question| %>
+			<% @quiz.questions.each_with_index do |question, question_index| %>
 				<%= f.fields_for :questions, question do |u| %>
-					<%= render 'question_fields', :f => u, :question => question %>
+					<%= render 'question_fields', :f => u, :question => question, :question_index => question_index %>
 				<% end %>
 			<% end %>
 			<%= link_to_function "Add Question", 'add_question(this)' %>
 		</div>
 	</div>
 <% end %>
-<!--<script>hideAnswers()</script>-->
+<script>hideAnswers()</script>

@@ -1,14 +1,14 @@
+<fieldset class="answer_fields">
+<%= f.hidden_field :_destroy, class: "add_remove_answer_link" %>
+<%= link_to_function "Remove Answer", "remove_answer(this)", class: "add_remove_answer_link" %>
+
 <p class="fillanswer">
 	<%= f.label :content, "Answer" %>
 	<%= f.text_field :content  %>
 </p>
-
 <p class="tfanswer">
 	<%= f.label :content, "Answer" %>
 	<%= f.radio_button :content, 't' %>True
 	<%= f.radio_button :content, 'f' %>False
 </p>
-
-<p class="multianswer">
-
-</p>
+</fieldset>

@@ -6,7 +6,12 @@ function getSelection(jsonObject){
 	return a;
 }
 
-function showQuiz(button){
+function showQuiz(quizNumber){
+
+
+}
+
+function showQuiz(){
     var quiz, options
 
 	quiz = createQuizObject();
@@ -67,7 +72,6 @@ function showQuiz(button){
 	}
     
     $( "#quizarea" ).jQuizMe( quiz, options );
-    $(button).hide();
 }
 
 jQuery(function(){

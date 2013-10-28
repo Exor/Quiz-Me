@@ -2,3 +2,22 @@
 
 <h1>Quiz Application</h1>
 <p>This is just a placeholder for the eventual splash page.</p>
+<h2>Quiz of the Day</h2>
+<%# tag("iframe",  src: quiz_path(2)) %>
+<script type="text/javascript" id="embeddedthing" class="embeddedthing">
+  (function() {
+    function async_load(){
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      var theUrl = 'http://localhost:3000/quizzes/5.js';
+      s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + 'ref=' + encodeURIComponent(window.location.href);
+      var embedder = document.getElementById('embeddedthing');
+      embedder.parentNode.insertBefore(s, embedder);
+    }
+    if (window.attachEvent)
+      window.attachEvent('onload', async_load);
+    else
+      window.addEventListener('load', async_load, false);
+  })();
+</script>

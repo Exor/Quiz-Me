@@ -3,6 +3,7 @@ class QuizzesController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit, :update]
 	
 	def show
+		@quiz = Quiz.find(params[:id])
 		gon.quiz = Quiz.find(params[:id])
 		gon.questions = Quiz.find(params[:id]).questions
 		gon.answers = []

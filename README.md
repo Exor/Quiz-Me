@@ -23,3 +23,4 @@ increase quiz popularity count when user takes (Finishes?) a quiz
 remove first "remove question" link so the user can't have 0 questions
 remove first "remove answer" link so the user can't have 0 answers
 fix the javascript when there are errors on the form (stuff gets wrapped in a <div class="errors">)
+embed code

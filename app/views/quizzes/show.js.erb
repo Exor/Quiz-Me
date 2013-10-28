@@ -48,6 +48,6 @@
 	  div.className = 'embedded_quiz cleanslate';
       scriptTag.parentNode.insertBefore(div, scriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
-      showQuiz();
+      embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );
     }
   }

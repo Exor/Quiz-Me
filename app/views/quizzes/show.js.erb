@@ -45,7 +45,7 @@
 
 	  var div = document.createElement('div');
 	  div.id = 'embedded_quiz';
-	  div.className = 'embedded_quiz cleanslate';
+	  div.className = 'embedded_quiz';
       scriptTag.parentNode.insertBefore(div, scriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
       embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );

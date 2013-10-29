@@ -27,7 +27,7 @@ function add_question(link){
 	strVar += "<option value=\"multiList\">Multiple Choice Radio Button<\/option><\/select>";
 
 	strVar += "<label for=\"quiz_questions_attributes_";strVar += index;strVar += "_content\">Question<\/label>";
-	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_content\" name=\"quiz[questions_attributes][0][content]\" type=\"text\" \/>";
+	strVar += "<input id=\"quiz_questions_attributes_";strVar += index;strVar += "_content\" name=\"quiz[questions_attributes][";strVar += index;strVar += "][content]\" type=\"text\" \/>";
 
 	strVar += "<fieldset class=\"answer_fields\">";
 
@@ -83,6 +83,7 @@ function changeType(select)
 	if (select.selectedIndex==0)
 	{//Choose a type
 		$(select).nextAll(".answer_fields").children(".tfanswer").hide();
+		$(select).nextAll(".answer_fields").children(".tfanswer").children("input").prop('checked', false);
 		$(select).nextAll(".answer_fields").children(".fillanswer").hide();
 		$(select).nextAll(".answer_fields").children(".add_remove_answer_link").hide();
 		$(select).nextAll(".add_remove_answer_link").hide();
@@ -98,6 +99,7 @@ function changeType(select)
 	{//Fill in the blank
 		$(select).nextAll(".answer_fields").children(".fillanswer").show();
 		$(select).nextAll(".answer_fields").children(".tfanswer").hide();
+		$(select).nextAll(".answer_fields").children(".tfanswer").children("input").prop('checked', false);
 		$(select).nextAll(".answer_fields").children(".add_remove_answer_link").hide();
 		$(select).nextAll(".add_remove_answer_link").hide();
 	}
@@ -105,6 +107,7 @@ function changeType(select)
 	{//Multiple Choice
 		$(select).nextAll(".answer_fields").children(".fillanswer").show();
 		$(select).nextAll(".answer_fields").children(".tfanswer").hide();
+		$(select).nextAll(".answer_fields").children(".tfanswer").children("input").prop('checked', false);
 		$(select).nextAll(".answer_fields").children(".add_remove_answer_link").show();
 		$(select).nextAll(".add_remove_answer_link").show();
 	}

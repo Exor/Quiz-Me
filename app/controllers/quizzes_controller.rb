@@ -6,13 +6,12 @@ class QuizzesController < ApplicationController
 		@quiz = Quiz.find(params[:id])
 		@questions = Quiz.find(params[:id]).questions
 		@answers = []
-		gon.quiz = Quiz.find(params[:id])
-		gon.questions = Quiz.find(params[:id]).questions
-		gon.answers = []
 		Quiz.find(params[:id]).questions.each do |question|
-			gon.answers.push(question.answers)
 			@answers.push(question.answers)
 		end
+		gon.quiz = @quiz
+		gon.questions = @questions
+		gon.answers = @answers
 	end
 
 	def new

@@ -12,7 +12,7 @@ class QuizzesController < ApplicationController
 		gon.quiz = @quiz
 		gon.questions = @questions
 		gon.answers = @answers
-		@quiz.access_count += 1
+		@quiz.increment(:access_count, by = 1)
 		@quiz.save
 	end
 

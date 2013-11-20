@@ -11,6 +11,13 @@
 												class: "btn btn-default" %>
 			<% end %>
 		</div>
+		<div id="sharebuttons">
+			<ul>
+				<li><div class="fb-share-button" data-href="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-type="button"></div></li>
+				<li><a href="https://twitter.com/share" class="twitter-share-button"  data-url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-text="Take some awesome quizzes at" data-count="none">Tweet</a></li>
+				<li><div class="g-plus" data-action="share" data-href="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-annotation="none"></div></li>
+			</ul>
+		</div>
 	</td>
 	<td><%= quiz.description %></td>
 	<td><%= quiz.created_at.strftime("%B, %e %Y") %></td>

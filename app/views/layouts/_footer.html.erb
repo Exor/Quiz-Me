@@ -5,9 +5,7 @@
 	<nav>
 		<ul>
 			<li><div class="fb-share-button" data-href="<%= root_path %>" data-type="box_count"></div></li>
-			<li>
-				<div class="twitter_box"><span id="followers"></span></div>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= root_path %>" data-text="Take some awesome quizzes at">Tweet</a></li>
+			<li><a href="https://twitter.com/share" class="twitter-share-button"  data-url="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" data-text="Take some awesome quizzes at" data-count="vertical">Tweet</a></li>
 			<li><div class="g-plus" data-action="share" data-href="<%= root_path %>" data-annotation="vertical-bubble"></div></li>
 		</ul>
   </nav>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131024072915) do
+ActiveRecord::Schema.define(version: 20131120015456) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20131024072915) do
     t.string   "name"
     t.string   "description"
     t.string   "help_text"
-    t.integer  "access_count"
+    t.integer  "access_count",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "random",            default: false

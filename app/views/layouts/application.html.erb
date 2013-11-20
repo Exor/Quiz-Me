@@ -11,10 +11,9 @@
 	
 </head>
 	<body>
-		<%= render 'layouts/facebooksdk' %>
-		<%= render 'layouts/googleplussdk' %>
+
 		<%= render 'layouts/header' %>
-		<%= render 'layouts/twittersdk' %>
+		
 		<% flash.each do |key, value| %>
 			<div class="alert alert-<%= key %>"><%= value %></div>
 		<% end %>
@@ -22,6 +21,7 @@
 		<div class="container">
 			<%= yield %>
 		</div>
+		<%= render 'layouts/socialmedia' %>
 	</body>
 	<%= render 'layouts/footer' %>
 	<%= debug(params) if Rails.env.development? %>

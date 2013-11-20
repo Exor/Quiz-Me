@@ -13,7 +13,7 @@ Tasks to finish up
 - Remove 'question number' from db
 - quiz must have at least one question
 - multiple choice add/remove answer
-FB Twitter Google+ Share links
+FB Twitter Google+ Share links on browse page
 - Fix true/false answers
 unobtrusive javascript on _quizform
 change error messages on quizform

@@ -1,22 +1,21 @@
-<fieldset class="question_fields">
-<h2>Question <%= question_index + 1 %></h2>
-<%= f.hidden_field :_destroy %>
-<%= link_to_function "Remove Question", "remove_question(this)" %>
+<div class="span6 offset3">
+	<fieldset class="question fields">
+	<h2>Question <%= link_to_remove_fields("(Remove)", f) %></h2>
 
-<%= f.label :category, "Type" %>
-<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype" %>
 
-<%= f.label :content, "Question" %>
-<%= f.text_field :content %>
+	<%= f.label :category, "Type" %>
+	<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype" %>
 
-<% question.answers.each_with_index do |answer, answer_index| %>
-	<%= f.fields_for :answers, answer do |u| %>
+	<%= f.label :content, "Question" %>
+	<%= f.text_field :content %>
+
+	<%= f.fields_for :answers do |u| %>
 		<%= render 'answer_fields', :f => u %>
 	<% end %>
-<% end %>
 
-<%= link_to_function "Add Answer", "add_answer(this, #{question_index})", class: "add_remove_answer_link" %>
+	<div><%= link_to_add_fields("Add Another Answer", f, :answers, class: "btn btn-primary") %></div>
 
-<%= f.label :explanation, "Explanation" %>
-<%= f.text_field :explanation %>
-</fieldset>
+	<%= f.label :explanation, "Explanation" %>
+	<%= f.text_field :explanation %>
+	</fieldset>
+</div>

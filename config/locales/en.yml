@@ -18,9 +18,29 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   activerecord:
+
     attributes:
       quiz:
-        name: Title
+        name: "Title"
+        questions: ""
+
+      quiz/questions:
+        content: "Question"
+        category: "Question Type"
+        answers: ""
+
+      quiz/questions/answers:
+        content: "Answer"
+
+    errors:
+      models:
+        quiz:
+          attributes:
+            questions: 
+              blank: "The quiz must have at least one question"
+        question:
+          attributes:
+            answers:
+              blank: "The question must have an answer"

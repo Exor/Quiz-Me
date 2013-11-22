@@ -17,14 +17,17 @@ class QuizzesController < ApplicationController
 	end
 
 	def new
-		@quiz = current_user.quizzes.build if signed_in?
+		if signed_in?
+			@quiz = current_user.quizzes.build
+			@question = @quiz.questions.build
+			@question.answers.build
+		end
 	end
 	
 	def create
 		@quiz = current_user.quizzes.build(quiz_params)
-		@quiz.questions.build if @quiz.questions.blank?
 		if @quiz.save
-			flash[:success] = "New quiz created!"
+			flash[:success] = "New quiz successfully created!"
 			redirect_to browse_path
 		else
 			render new_quiz_path
@@ -45,6 +48,7 @@ class QuizzesController < ApplicationController
 	
 	def destroy
 		@quiz.destroy
+		flash[:success] = "Quiz deleted"
 		redirect_to browse_path
 	end
 	

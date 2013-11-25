@@ -7,6 +7,9 @@ function add_fields(link, association, content) {
     var new_id = new Date().getTime();
     var regex = new RegExp("new_" + association, "g");
     $(link).parent().before(content.replace(regex, new_id));
+    if (association == "questions") {
+    	$(link).parent().prev().children().children(".add_answer_button").children().click();
+    }
     hideAnswers();
 }
 
@@ -25,6 +28,7 @@ function changeType(select)
 		$(select).nextAll(".answer").show();
 		$(select).nextAll(".add_answer_button").hide();
 		$(select).nextAll(".answer").children(".remove_answer_button").hide();
+		$(select).nextAll(".answer").children("label").first().text("Answer");
 
 		$(select).nextAll(".answer").children(".tfanswer").show();
 		$(select).nextAll(".answer").children(".fillanswer").hide();
@@ -36,6 +40,7 @@ function changeType(select)
 		$(select).nextAll(".answer").show();
 		$(select).nextAll(".add_answer_button").hide();
 		$(select).nextAll(".answer").children(".remove_answer_button").hide();
+		$(select).nextAll(".answer").children("label").first().text("Answer");
 
 		$(select).nextAll(".answer").children(".fillanswer").show();
 		$(select).nextAll(".answer").children(".tfanswer").hide();
@@ -48,6 +53,11 @@ function changeType(select)
 		$(select).nextAll(".answer").show();
 		$(select).nextAll(".add_answer_button").show();
 		$(select).nextAll(".answer").children(".remove_answer_button").show();
+		$(select).nextAll(".answer").first().children(".remove_answer_button").hide();
+
+		
+		$(select).nextAll(".answer").children("label").text("Wrong Answer");
+		$(select).nextAll(".answer").children("label").first().text("Correct Answer");
 
 		$(select).nextAll(".answer").children(".fillanswer").show();
 		$(select).nextAll(".answer").children(".tfanswer").hide();
@@ -58,6 +68,7 @@ function changeType(select)
 };
 
 function hideAnswers() {
+	$('a.remove_question').first().hide();
 	var selectors = $('.questiontype')
 	for (i=0;i<selectors.length;i++)
 		{changeType(selectors[i]);}

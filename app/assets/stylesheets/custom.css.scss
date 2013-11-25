@@ -115,6 +115,18 @@ footer {
 }
 
 /* quiz create page */
+input[type="text"] {
+    width: 90%;
+}
+
+input[type="password"] {
+  @extend input[type="text"];
+}
+
+#options h2{
+  margin-bottom: 10px;
+}
+
 #options label{
     display: block;
     padding-left: 15px;

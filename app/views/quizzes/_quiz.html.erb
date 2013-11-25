@@ -13,9 +13,15 @@
 		</div>
 		<div id="sharebuttons">
 			<ul>
-				<li><div class="fb-share-button" data-href="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-type="button"></div></li>
-				<li><a href="https://twitter.com/share" class="twitter-share-button"  data-url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-text="Take some awesome quizzes at" data-count="none">Tweet</a></li>
-				<li><div class="g-plus" data-action="share" data-href="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" data-annotation="none"></div></li>
+				<li>
+					<%= link_to image_tag("fbsharebtn.png", alt: "Share on Facebook"), "#" %>
+				</li>
+				<li>
+					<%= link_to image_tag("tweetbtn.png", alt: "Tweet on Twitter"), "#" %>
+				</li>
+				<li>
+					<%= link_to image_tag("gplusbtn.png", alt: "Share on Google Plus"), "#" %>
+				</li>
 			</ul>
 		</div>
 	</td>

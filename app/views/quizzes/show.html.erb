@@ -5,4 +5,5 @@
 <div><a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= request.original_url %>" data-text="Try this quiz!">Tweet</a></div>
 <div class="g-plus" data-action="share" data-href="<%= request.original_url %>" data-annotation="bubble"></div>
 
-<%# text_field_tag 'embed_code', '<script>'+request.original_url %>
+<span>Embed this quiz by pasting the code below into your website!</span>
+<%= text_field_tag 'embed_code', '<script src="'+request.original_url+'.js" async></script>' %>

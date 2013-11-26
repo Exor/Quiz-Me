@@ -16,18 +16,6 @@
     };
   }
 
-
-      // add the required js files to the head
-      /*
-      var newScriptTag = document.createElement("script");
-      newScriptTag.src = "<%= File.join(root_url, 'assets', 'quizbuilder.js') %>";
-      document.getElementsByTagName('head')[0].appendChild(newScriptTag);
-
-      var newScriptTag = document.createElement("script");
-      newScriptTag.src = "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js";
-      document.getElementsByTagName('head')[0].appendChild(newScriptTag);
-*/
-
   var QuizGenerator = {};
 
   var processedScripts = [];
@@ -51,7 +39,7 @@
         var styleTag = document.createElement("link");
         styleTag.rel = "stylesheet";
         styleTag.type = "text/css";
-        styleTag.href =  "<%= File.join(root_url, 'assets', 'cleanslate.css') %>";
+        styleTag.href =  "<%= File.join(root_url, 'assets', 'embed.css') %>";
         styleTag.media = "all";
         document.getElementsByTagName('head')[0].appendChild(styleTag);
         styleTags.push(styleTag);
@@ -59,7 +47,7 @@
 
 	    var div = document.createElement('div');
 	    div.id = 'embedded_quiz';
-	    div.className = 'embedded_quiz';
+	    div.className = 'cleanslate';
 
       scriptTag.parentNode.insertBefore(div, scriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
@@ -67,15 +55,11 @@
       var embedMyQuiz = function() {
         embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );
       }
-      var loadQuizScript = function() {
-        loadScript("<%= File.join(root_url, 'assets', 'quizbuilder.js') %>", embedMyQuiz);
+      var loadCustomJS = function() {
+        loadScript("<%= File.join(root_url, 'assets', 'embed.min.js') %>", embedMyQuiz);
       }
 
-      var loadJQuizMe = function() {
-        loadScript("<%= File.join(root_url, 'assets', 'jQuizMe-2.2.1.js') %>", loadQuizScript);
-      }
-
-      loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", loadJQuizMe);
+      loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", loadCustomJS);
       
     }
   }

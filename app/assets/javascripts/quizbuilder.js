@@ -9,9 +9,7 @@ function embedQuiz(quiz_json, questions_json, answers_json){
 	var quiz = JSON.parse(quiz_json);
 	var questions = JSON.parse(questions_json);
 	var answers = JSON.parse(answers_json);
-	console.log(quiz);
-	console.log(questions);
-	console.log(answers);
+	
 	showQuiz(quiz, questions, answers);
 }
 

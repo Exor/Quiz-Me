@@ -82,13 +82,6 @@ function showQuiz(quiz, questions, answers){
     $( "#quizarea" ).jQuizMe( quiz, options );
 }
 
-jQuery(function(){
-        //console.log(quiz);
-        //console.log(questions);
-        //console.log(quiz);
-        //console.log(answers);
-});
-
 function createQuizObject(questions){
 	var types = new Object();
 	for (var i=0; i < questions.length; i++) 

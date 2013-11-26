@@ -1,4 +1,4 @@
-
+(function (global) {
 
   // add array index of for old browsers (IE<9)
   if (!Array.prototype.indexOf) {
@@ -15,6 +15,18 @@
       return -1;
     };
   }
+
+
+      // add the required js files to the head
+      /*
+      var newScriptTag = document.createElement("script");
+      newScriptTag.src = "<%= File.join(root_url, 'assets', 'quizbuilder.js') %>";
+      document.getElementsByTagName('head')[0].appendChild(newScriptTag);
+
+      var newScriptTag = document.createElement("script");
+      newScriptTag.src = "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js";
+      document.getElementsByTagName('head')[0].appendChild(newScriptTag);
+*/
 
   var QuizGenerator = {};
 
@@ -39,17 +51,49 @@
         var styleTag = document.createElement("link");
         styleTag.rel = "stylesheet";
         styleTag.type = "text/css";
-        styleTag.href =  'http://localhost:3000/assets/cleanslate.css';
+        styleTag.href =  "<%= File.join(root_url, 'assets', 'cleanslate.css') %>";
         styleTag.media = "all";
         document.getElementsByTagName('head')[0].appendChild(styleTag);
         styleTags.push(styleTag);
       }
 
-	  var div = document.createElement('div');
-	  div.id = 'embedded_quiz';
-	  div.className = 'embedded_quiz';
+	    var div = document.createElement('div');
+	    div.id = 'embedded_quiz';
+	    div.className = 'embedded_quiz';
+
       scriptTag.parentNode.insertBefore(div, scriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
-      embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );
+
+      var embedMyQuiz = function() {
+        embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );
+      }
+      var loadQuizScript = function() {
+        loadScript("<%= File.join(root_url, 'assets', 'quizbuilder.js') %>", embedMyQuiz);
+      }
+
+      var loadJQuizMe = function() {
+        loadScript("<%= File.join(root_url, 'assets', 'jQuizMe-2.2.1.js') %>", loadQuizScript);
+      }
+
+      loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", loadJQuizMe);
+      
     }
   }
+})(this);
+
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}

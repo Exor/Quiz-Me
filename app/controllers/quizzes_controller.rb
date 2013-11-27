@@ -9,9 +9,6 @@ class QuizzesController < ApplicationController
 		Quiz.find(params[:id]).questions.each do |question|
 			@answers.push(question.answers)
 		end
-		gon.quiz = @quiz
-		gon.questions = @questions
-		gon.answers = @answers
 		@quiz.increment(:access_count, by = 1)
 		@quiz.save
 	end

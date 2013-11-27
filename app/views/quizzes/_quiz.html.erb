@@ -13,15 +13,9 @@
 		</div>
 		<div id="sharebuttons">
 			<ul>
-				<li>
-					<%= link_to image_tag("fbsharebtn.png", alt: "Share on Facebook"), "#" %>
-				</li>
-				<li>
-					<%= link_to image_tag("tweetbtn.png", alt: "Tweet on Twitter"), "#" %>
-				</li>
-				<li>
-					<%= link_to image_tag("gplusbtn.png", alt: "Share on Google Plus"), "#" %>
-				</li>
+				<li><span class="st_facebook_large" displayText='Share' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></span></li>
+				<li><div class="st_twitter_large" displayText='Tweet' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" st_via=""></div></li>
+				<li><div class="st_googleplus_large" displayText='+ 1'  st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></div></li>
 			</ul>
 		</div>
 	</td>

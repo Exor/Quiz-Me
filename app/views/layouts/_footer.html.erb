@@ -4,9 +4,9 @@
 	</small>
 	<nav>
 		<ul>
-			<li><div class="fb-share-button" data-href="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" data-type="box_count"></div></li>
-			<li><a href="https://twitter.com/share" class="twitter-share-button"  data-url="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" data-text="Take some awesome quizzes at" data-count="vertical">Tweet</a></li>
-			<li><div class="g-plus" data-action="share" data-href="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" data-annotation="vertical-bubble"></div></li>
+			<li><span class="st_facebook_vcount" displayText='Share' st_url="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" st_title="Quiz Me" st_summary="Create and share your own quizzes with an easy to use interface!"></span></li>
+			<li><div class="st_twitter_vcount" displayText='Tweet' st_url="<%= "#{request.protocol}#{request.host_with_port}#{root_path}" %>" st_title="Quiz Me" st_summary="Create and share your own quizzes with an easy to use interface!" st_via=""></div></li>
+			<li><div class="st_googleplus_vcount" displayText='+ 1'></div></li>
 		</ul>
   </nav>
 </footer>

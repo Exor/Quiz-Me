@@ -1,10 +1,13 @@
 <% provide(:title, "Take a Quiz") %>
 
 <script src="<%= quiz_path(@quiz) %>.js" async></script>
-
-<div class="fb-share-button" data-href="<%= request.original_url %>" data-type="button_count"></div>
-<div><a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= request.original_url %>" data-text="Try this quiz!">Tweet</a></div>
-<div class="g-plus" data-action="share" data-href="<%= request.original_url %>" data-annotation="bubble"></div>
-
+<div id="sharebuttons">
+	<ul>
+		<li><span class="st_facebook_hcount" displayText='Share' st_url="<%= request.original_url %>"></span></li>
+		<li><div class="st_twitter_hcount" displayText='Tweet' st_url="<%= request.original_url %>" st_via=""></div></li>
+		<li><div class="st_googleplus_hcount" displayText='+ 1'  st_url="<%= request.original_url %>"></div></li>
+	</ul>
+</div>
+<br />
 <span>Embed this quiz by pasting the code below into your website!</span>
 <%= text_field_tag 'embed_code', '<script src="'+request.original_url+'.js" async></script>' %>

@@ -1,5 +1,5 @@
 /* JQuizMe */
-#quizarea .quiz-el{
+#quizme_quizarea .quiz-el{
     background: #ffaa33;
     font-size: 1.1em;
     font-family: Arial, Verdana, Helvetica, sans-serif;
@@ -7,126 +7,136 @@
     padding: 0.2em;
     width: 17em;
 }
-#quizarea .quiz-el div{
+#quizme_quizarea .quiz-el div{
     padding: 0.2em;
 }
-#quizarea .quiz-el input{
+#quizme_quizarea .quiz-el input{
     font-size: 0.8em;
 }
 /* .q-innerArea = .q-header, .q-help, .q-prob, .q-intro, .q-gameOver */
-#quizarea .q-innerArea{
+#quizme_quizarea .q-innerArea{
     background: #ffdd77;
     position:relative;
     clear: both;
     color: black;
 }
-#quizarea .q-header, #quizarea .q-help, #quizarea .q-review-menu {
+#quizme_quizarea .q-header, #quizme_quizarea .q-help, #quizme_quizarea .q-review-menu {
     border-bottom: thin black solid;
 }
-#quizarea .q-intro{
+#quizme_quizarea .q-intro{
     padding: 0.2em;
 }
-#quizarea .q-title{
+#quizme_quizarea .q-title{
     overflow: hidden;
     width: 80%;
     margin: 0;
 }
 /*This is a hack, because IE fails on float:right.*/
-#quizarea .q-counter{
+#quizme_quizarea .q-counter{
     position: absolute;
     top: 0%;
     right: 0%;
     margin: 1%;
     padding: 0%;
 }
-#quizarea .q-counter{
+#quizme_quizarea .q-counter{
     float: right;
 }
-#quizarea .q-help{
+#quizme_quizarea .q-help{
     position: relative;
     clear:both;
 }
 /*.q-probArea = .q-ques, .q-ansSel, .q-result */
-#quizarea .q-probArea{
+#quizme_quizarea .q-probArea{
     background: #eee;
     border: thin black solid;
     font-size: 1.2em;
     position: relative;
 }
-#quizarea .q-help-menu{
+#quizme_quizarea .q-help-menu{
     width: 97%;
 }
-#quizarea .q-help-info{
+#quizme_quizarea .q-help-info{
     clear:both;
 }
-#quizarea .q-quit-confirm, #quizarea .q-quit-area, #quizarea .q-review-arrows{
+#quizme_quizarea .q-quit-confirm, #quizme_quizarea .q-quit-area, #quizme_quizarea .q-review-arrows{
     display: inline;
     width: auto;
 }
-#quizarea .q-quit-area{
+#quizme_quizarea .q-quit-area{
     float: right;
 }
-#quizarea .q-review-arrows{
+#quizme_quizarea .q-review-arrows{
     position: relative; /*IE hack.*/
     width: 2.3em;
 }
-#quizarea .q-center{
+#quizme_quizarea .q-center{
     text-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-#quizarea .q-gameOver .q-statTotal{
+#quizme_quizarea .q-gameOver .q-statTotal{
     color: blue;
 }
-#quizarea .q-quesInput{
+#quizme_quizarea .q-quesInput{
     width: 95%;
 }
-#quizarea .q-ol{
+#quizme_quizarea .q-ol{
     list-style-type: upper-alpha;
     list-style-position: inside;
     padding: 0;
     margin: 0;
 }
-#quizarea .q-ol-li{
+#quizme_quizarea .q-ol-li{
     margin: 0.4em auto 0.4em auto;
 }
-#quizarea .q-ol-hover{
+#quizme_quizarea .q-ol-hover{
     background: #777777;
 }
-#quizarea .q-ol-active{
+#quizme_quizarea .q-ol-active{
     background: black;
     color: #ccffaa;
 }
 /*IE displays the wrong width for <select> tags.*/
-#quizarea .q-select{
+#quizme_quizarea .q-select{
     width : 80%;
 }
-#quizarea .q-select{
+#quizme_quizarea .q-select{
     font-size: 0.8em;
     width: 100%;
 }
-#quizarea .q-timer-area{
+#quizme_quizarea .q-timer-area{
     display:block;
     text-align:center;
     width: auto;
 }
-#quizarea .q-review-menu{
+#quizme_quizarea .q-review-menu{
     text-align: center;
     width: auto;
 }
-#quizarea .q-reviewBar-btns{
+#quizme_quizarea .q-reviewBar-btns{
     position: relative;
     display: inline-block;
     width: 49%;
 }
-#quizarea .q-rightArrow{
+#quizme_quizarea .q-rightArrow{
     float:right;
 }
-#quizarea .q-leftArrow{
+#quizme_quizarea .q-leftArrow{
     float:left;
 }
-#quizarea .q-timer-area{
+#quizme_quizarea .q-timer-area{
     line-height: 0;
     height:0;
+}
+#quizme_sharebuttons ul{
+    float: none;
+    list-style: none;
+    margin: 5px 0 0 0;
+}
+
+#quizme_sharebuttons li{
+    margin: auto;
+    display: inline-block;
 }

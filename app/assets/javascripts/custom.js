@@ -8,6 +8,8 @@ $(document).on('page:load', initialize);
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
     $(link).closest(".fields").hide();
+    dealWithRemoveAnswerButton(link);
+    dealWithRemoveQuestionButton(link);
 }
 
 function add_fields(link, association, content) {
@@ -18,6 +20,8 @@ function add_fields(link, association, content) {
     	$(link).parent().prev().children().children(".add_answer_button").children().click();
     }
     hideAnswers();
+    dealWithAddAnswerButton(link);
+    dealWithAddQuestionButton(link);
 }
 
 
@@ -61,7 +65,6 @@ function changeType(select)
 		$(select).nextAll(".add_answer_button").show();
 		$(select).nextAll(".answer").children(".remove_answer_button").show();
 		$(select).nextAll(".answer").first().children(".remove_answer_button").hide();
-
 		
 		$(select).nextAll(".answer").children("label").text("Wrong Answer");
 		$(select).nextAll(".answer").children("label").first().text("Correct Answer");
@@ -87,4 +90,30 @@ function hideDeletedAnswers(select) {
 
 function removeAllButFirstAnswer(select) {
 	remove_fields($(select).nextAll(".answer:not(:first)").children("a"));
+}
+
+function dealWithAddAnswerButton(link) {
+	$(link).show();
+	var answerLength = $(link).parent().prevAll(".answer").length;
+	var hiddenAnswerLength = $(link).parent().prevAll(".answer").children("input[type=hidden][value=1]").length;
+	if (answerLength - hiddenAnswerLength >= 6) {
+		$(link).hide();
+	}
+}
+
+function dealWithRemoveAnswerButton(link) {
+	dealWithAddAnswerButton($(link).parent().nextAll(".add_answer_button").children());
+}
+
+function dealWithAddQuestionButton(link) {
+	$(link).show();
+	var questionLength = $(link).parent().prevAll(".question_box").length;
+	var hiddenQuestionLength = $(link).parent().prevAll(".question_box").children("fieldset").children("h2").children("input[type=hidden][value=1]").length;
+	if (questionLength - hiddenQuestionLength >= 10) {
+		$(link).hide();
+	}
+}
+
+function dealWithRemoveQuestionButton(link) {
+	dealWithAddQuestionButton($(link).parent().parent().parent().nextAll(".add_question_button").children());
 }

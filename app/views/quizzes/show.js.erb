@@ -46,8 +46,7 @@
       }
 
 	    var div = document.createElement('div');
-	    div.id = 'embedded_quiz';
-	    div.className = 'cleanslate';
+	    div.id = 'quizme_embedded_quiz';
 
       scriptTag.parentNode.insertBefore(div, scriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';

@@ -1,3 +1,49 @@
+/* CSS RESET */
+#quizme_embedded_quiz html, #quizme_embedded_quiz body, #quizme_embedded_quiz div, #quizme_embedded_quiz span, #quizme_embedded_quiz applet, #quizme_embedded_quiz object, #quizme_embedded_quiz iframe,
+#quizme_embedded_quiz h1, #quizme_embedded_quiz h2, #quizme_embedded_quiz h3, #quizme_embedded_quiz h4, #quizme_embedded_quiz h5, #quizme_embedded_quiz h6, #quizme_embedded_quiz p, #quizme_embedded_quiz blockquote, #quizme_embedded_quiz pre,
+#quizme_embedded_quiz a, #quizme_embedded_quiz abbr, #quizme_embedded_quiz acronym, #quizme_embedded_quiz address, #quizme_embedded_quiz big, #quizme_embedded_quiz cite, #quizme_embedded_quiz code,
+#quizme_embedded_quiz del, #quizme_embedded_quiz dfn, #quizme_embedded_quiz em, #quizme_embedded_quiz img, #quizme_embedded_quiz ins, #quizme_embedded_quiz kbd, #quizme_embedded_quiz q, #quizme_embedded_quiz s, #quizme_embedded_quiz samp,
+#quizme_embedded_quiz small, #quizme_embedded_quiz strike, #quizme_embedded_quiz strong, #quizme_embedded_quiz sub, #quizme_embedded_quiz sup, #quizme_embedded_quiz tt, #quizme_embedded_quiz var,
+#quizme_embedded_quiz b, #quizme_embedded_quiz u, #quizme_embedded_quiz i, #quizme_embedded_quiz center,
+#quizme_embedded_quiz dl, #quizme_embedded_quiz dt, #quizme_embedded_quiz dd, #quizme_embedded_quiz ol, #quizme_embedded_quiz ul, #quizme_embedded_quiz li,
+#quizme_embedded_quiz fieldset, #quizme_embedded_quiz form, #quizme_embedded_quiz label, #quizme_embedded_quiz legend,
+#quizme_embedded_quiz table, #quizme_embedded_quiz caption, #quizme_embedded_quiz tbody, #quizme_embedded_quiz tfoot, #quizme_embedded_quiz thead, #quizme_embedded_quiz tr, #quizme_embedded_quiz th, #quizme_embedded_quiz td,
+#quizme_embedded_quiz article, #quizme_embedded_quiz aside, #quizme_embedded_quiz canvas, #quizme_embedded_quiz details, #quizme_embedded_quiz embed, #quizme_embedded_quiz 
+#quizme_embedded_quiz figure, #quizme_embedded_quiz figcaption, #quizme_embedded_quiz footer, #quizme_embedded_quiz header, #quizme_embedded_quiz hgroup, #quizme_embedded_quiz 
+#quizme_embedded_quiz menu, #quizme_embedded_quiz nav, #quizme_embedded_quiz output, #quizme_embedded_quiz ruby, #quizme_embedded_quiz section, #quizme_embedded_quiz summary,
+#quizme_embedded_quiz time, #quizme_embedded_quiz mark, #quizme_embedded_quiz audio, #quizme_embedded_quiz video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: "sans-serif";
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+#quizme_embedded_quiz article, #quizme_embedded_quiz aside, #quizme_embedded_quiz details, #quizme_embedded_quiz figcaption, #quizme_embedded_quiz figure, #quizme_embedded_quiz 
+#quizme_embedded_quiz footer, #quizme_embedded_quiz header, #quizme_embedded_quiz hgroup, #quizme_embedded_quiz menu, #quizme_embedded_quiz nav, #quizme_embedded_quiz section {
+    display: block;
+}
+#quizme_embedded_quiz body {
+    line-height: 1;
+}
+#quizme_embedded_quiz ol, #quizme_embedded_quiz ul {
+    list-style: none;
+}
+#quizme_embedded_quiz blockquote, #quizme_embedded_quiz q {
+    quotes: none;
+}
+#quizme_embedded_quiz blockquote:before, #quizme_embedded_quiz blockquote:after,
+#quizme_embedded_quiz q:before, #quizme_embedded_quiz q:after {
+    content: '';
+    content: none;
+}
+#quizme_embedded_quiz table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
 /* JQuizMe */
 #quizme_quizarea .quiz-el{
     background: #ffaa33;
@@ -130,6 +176,8 @@
     line-height: 0;
     height:0;
 }
+
+/* Sharebuttons */
 #quizme_sharebuttons ul{
     float: none;
     list-style: none;
@@ -139,4 +187,9 @@
 #quizme_sharebuttons li{
     margin: auto;
     display: inline-block;
+}
+
+/* Container */
+#quizme_embedded_quiz{
+    width: 268px;
 }

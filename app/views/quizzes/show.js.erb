@@ -53,7 +53,7 @@
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
 
       var embedMyQuiz = function() {
-        embedQuiz('<%= raw(@quiz.to_json) %>', '<%= raw(@questions.to_json) %>', '<%= raw(@answers.to_json) %>' );
+        embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>' );
       }
       var loadCustomJS = function() {
         loadScript("<%= File.join(root_url, 'assets', 'embed.min.js') %>", embedMyQuiz);

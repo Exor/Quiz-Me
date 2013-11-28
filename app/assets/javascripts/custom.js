@@ -5,7 +5,6 @@ stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: t
 $(document).ready(initialize);
 $(document).on('page:load', initialize);
 
-
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
     $(link).closest(".fields").hide();

@@ -22,5 +22,6 @@ module QuizGenerator
 	
 	#make assets bootstrap compatible
 	config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.version='1.1'
   end
 end

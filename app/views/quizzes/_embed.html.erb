@@ -1,5 +1,7 @@
 <div id="quizme_quizarea"></div>
-<div id="quizme_sharebuttons">
+<button type="button" id="quizme_share_btn">Share This Quiz</button>
+<button type="button" id="quizme_embed_btn">Embed This Quiz</button>
+<div id="quizme_sharebuttons" style="display:none;">
 	<ul>
 		<li>
 			<div class="quizme_facebook">
@@ -18,6 +20,6 @@
 		</li>
 	</ul>
 </div>
-<div id="quizme_embedcode">
+<div id="quizme_embedcode" style="display:none;">
 	<%= text_field_tag 'embed_code', '<script src="'+request.original_url+'" async></script>' %>
 </div>

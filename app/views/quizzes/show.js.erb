@@ -33,11 +33,15 @@
   var pageScriptTags = document.getElementsByTagName('script');
   var thisRequestUrl = '<%= raw(request.url) %>';
 
+  // make sure the script is only ran once
+  var processed = 0;
+
   for(var i = 0; i < pageScriptTags.length; i++) {
     var pageScriptTag = pageScriptTags[i];
 
     // src matches the url of this request, and not processed it yet.
-    if (pageScriptTag.src == thisRequestUrl && processedScripts.indexOf(pageScriptTag) < 0) {
+    if (pageScriptTag.src == thisRequestUrl && processedScripts.indexOf(pageScriptTag) < 0 && processed == 0) {
+      processed++;
 
       processedScripts.push(pageScriptTag);
 
@@ -75,7 +79,11 @@
         scriptTags.push(scriptTag);
       }
       else {
-        window.onload=function(){embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id );};
+        addLoadEvent(
+          function(){
+            embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id );
+          }
+        )
       }
 
 
@@ -99,4 +107,18 @@ function loadScript(url, callback)
 
     // Fire the loading
     head.appendChild(script);
+}
+
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
 }

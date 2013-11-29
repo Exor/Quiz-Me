@@ -21,6 +21,6 @@ module QuizGenerator
     # config.i18n.default_locale = :de
 	
 	#make assets bootstrap compatible
-	config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif embed.css embed.min.js)
+	config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

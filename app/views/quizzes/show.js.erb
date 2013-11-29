@@ -39,7 +39,7 @@
         var styleTag = document.createElement("link");
         styleTag.rel = "stylesheet";
         styleTag.type = "text/css";
-        styleTag.href =  "<%= File.join(root_url, 'assets', 'embed.css') %>";
+        styleTag.href =  "<%= File.join(root_url, 'assets', 'embed', 'embed.css') %>";
         styleTag.media = "all";
         document.getElementsByTagName('head')[0].appendChild(styleTag);
         styleTags.push(styleTag);
@@ -55,7 +55,7 @@
         embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>' );
       }
       var loadCustomJS = function() {
-        loadScript("<%= File.join(root_url, 'assets', 'embed.min.js') %>", embedMyQuiz);
+        loadScript("<%= File.join(root_url, 'assets', 'embed', 'embed.min.js') %>", embedMyQuiz);
       }
 
       loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", loadCustomJS);

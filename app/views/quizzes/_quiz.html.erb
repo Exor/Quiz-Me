@@ -1,31 +1,30 @@
 <tr>
-	<td><%= quiz.name %></td>
 	<td>
-		<div class="btn-group">
-			<%= link_to "Take",			quiz_path(quiz), class: "btn btn-default" %>
-			<button type="button" class="btn btn-default">Share</button>
-			<% if signed_in? %>
-				<%= link_to "Edit",		edit_quiz_path(quiz), class: "btn btn-default" %>
-				<%= link_to "Delete", 	quiz, 	method: :delete, 
-												data: { confirm: "Are you sure?" }, 
-												class: "btn btn-default" %>
-			<% end %>
+		<div class="row">
+			<div class="col-sm-9 left-table">
+				<h4><%= quiz.name %></h4>
+				<h5><%= quiz.description %></h5>
+				<h6>Created on <%= quiz.created_at.strftime("%B, %e %Y") %></h6>
+				<h5><small>Taken <%= quiz.access_count %> times</small></h5>
+			</div>
+			<div class="col-sm-3 right-table">
+				<%= link_to "Take this quiz",			quiz_path(quiz), class: "btn btn-default btn-success" %>
+
+				<div class="btn-group">
+					
+					<% if signed_in? %>
+						<%= link_to "Edit",		edit_quiz_path(quiz), class: "btn btn-default" %>
+						<%= link_to "Delete", 	quiz, 	method: :delete, 
+														data: { confirm: "Are you sure?" }, 
+														class: "btn btn-default" %>
+					<% end %>
+				</div>
+				<div id="sharebuttons">
+					<span class="st_facebook_large" displayText='Share' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></span>
+					<span class="st_twitter_large" displayText='Tweet' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" st_via=""></span>
+					<span class="st_googleplus_large" displayText='+ 1'  st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></span>
+				</div>
+			</div>
 		</div>
-		<div id="sharebuttons">
-			<ul>
-				<li><span class="st_facebook_large" displayText='Share' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></span></li>
-				<li><div class="st_twitter_large" displayText='Tweet' st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>" st_via=""></div></li>
-				<li><div class="st_googleplus_large" displayText='+ 1'  st_url="<%= "#{request.protocol}#{request.host_with_port}#{quiz_path(quiz)}" %>"></div></li>
-			</ul>
-		</div>
-	</td>
-	<td><%= quiz.description %></td>
-	<td><%= quiz.created_at.strftime("%B, %e %Y") %></td>
-	<td>
-		<% if quiz.access_count == nil %>
-			0
-		<% else %>
-			<%= quiz.access_count %>
-		<% end %>
 	</td>
 </tr>

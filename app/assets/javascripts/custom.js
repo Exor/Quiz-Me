@@ -1,3 +1,5 @@
+console.log(jQuery.fn.jquery);
+
 function initialize(){
 stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});	
 }

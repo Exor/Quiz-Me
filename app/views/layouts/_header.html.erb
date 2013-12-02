@@ -1,16 +1,23 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+            </button>
 			<%= link_to "Quiz Me", root_path, id: "logo" %>
+		</div>
+		<div class="collapse navbar-collapse">
 			<nav>
-				<ul class="nav pull-right">
+				<ul class="nav navbar-nav pull-right">
 					<li><%= link_to "About",    		about_path %></li>
 					<li><%= link_to "Browse Quizzes", 	browse_path %></li>
 					<% if signed_in? %>
 						<li><%= link_to "Update Your Profile", edit_user_path(current_user) %></li>
 						<li><%= link_to "Logout", signout_path, method: "delete" %></li>
 					<% end %>
-					
 				</ul>
 			</nav>
 		</div>

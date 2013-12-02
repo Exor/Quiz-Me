@@ -1,10 +1,18 @@
 @import "bootstrap";
 
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
-/* universal */
+/* universal 
 
 html {
   overflow-y: scroll;
@@ -29,7 +37,7 @@ textarea {
   }
 }
 
-/* typography */
+/* typography 
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -66,7 +74,7 @@ p {
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 15px;
   font-weight: bold;
   line-height: 1;
   &:hover {
@@ -81,11 +89,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $grayLight;
+  color: $gray;
   a {
     color: $gray;
     &:hover {
-      color: $grayDarker;
+      color: $gray;
     }
   }
   small {

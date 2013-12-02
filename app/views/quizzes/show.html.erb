@@ -1,5 +1,6 @@
 <% provide(:title, "Take a Quiz") %>
 
-<script src="<%= quiz_path(@quiz) %>.js" async></script>
-
-<%= render 'share_buttons' %>
+<div id="quiz_container">
+	<script src="<%= quiz_path(@quiz) %>.js" async></script>
+	<%= render 'share_buttons' %>
+</div>

@@ -7,6 +7,6 @@
 </div>
 <br />
 <div id="embedcode">
-<span>Embed this quiz in your website by copying the code below!</span>
-<%= text_field_tag 'embed_code', '<script src="'+request.original_url+'.js" async></script>' %>
+<div>Embed this quiz in your website by copying the code below!</div>
+<%= text_area_tag 'embed_code', '<script src="'+request.original_url+'.js" async></script>', rows: 2 %>
 </div>

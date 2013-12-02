@@ -24,3 +24,5 @@ Tasks to finish up
 - remove first "remove answer" link so the user can't have 0 answers
 - fix the javascript when there are errors on the form (stuff gets wrapped in a <div class="errors">)
 - embed code
+
+tie popularity to start quiz button

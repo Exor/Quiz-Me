@@ -161,6 +161,23 @@ input[type="password"] {
 }
 
 /* quiz show page */
-#quizme_share_btn{
-  display: none;
+#quiz_container{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  text-align: center;
+
+  .quizme_share_btn{
+    display: none;
+  }
+
+  #embedcode textarea{
+    width: 35%
+  }
+
+  .quizme_quizarea{
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
+

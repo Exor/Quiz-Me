@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-sm-9 left-table">
+		<h4><%= quiz.name %></h4>
+		<h5><%= quiz.description %></h5>
+		<h6>Created on <%= quiz.created_at.strftime("%B, %e %Y") %></h6>
+		<h5><small>Taken <%= quiz.access_count %> times</small></h5>
+	</div>
+	<div class="col-sm-3 right-table">
+		<%= link_to "Take this quiz",			quiz_path(quiz), class: "btn btn-default btn-success" %>
+	</div>
+</div>

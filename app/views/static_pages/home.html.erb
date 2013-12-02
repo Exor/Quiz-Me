@@ -1,18 +1,20 @@
 <%= provide(:title, 'Home') %>
-
-<h1>Quiz Me</h1>
-<h2>An awesome online application for you to share quizzes!</h2>
-
-<div id="daily_quiz">
-	<h1>Quiz of the Day</h1>
-	<script src="<%= quizzes_path %>/1.js" async></script>
-</div>
-
-<div id="most_popular">
-
-</div>
-
-<div id="other">
-	<span>Not your cup of tea?</span>
-	<a href="<%= browse_path %>" class="btn btn-large btn-primary">Take a Different Quiz</a>
+<div class="container">
+	<div class="col-sm-12">
+		<h1>Quiz Me</h1>
+		<h2><small>An awesome online application for you to share quizzes!</small></h2>
+	</div>
+	<div class="col-sm-6" id="daily_quiz">
+		<h2>Quiz of the Day</h2>
+		<script src="<%= quizzes_path %>/1.js" async></script>
+	</div>
+	<div class="col-sm-6" id="most_popular">
+		<h2>Most Popular Quizzes</h2>
+		<% if @quizzes.any? %>
+			<% @quizzes.each do |quiz| %>
+				<%= render "shared/quiz_layout", quiz: quiz %>
+			<% end %>
+		<% end %>
+		<a href="<%= browse_path %>" class="btn btn-large btn-primary">Take a Different Quiz</a>
+	</div>
 </div>

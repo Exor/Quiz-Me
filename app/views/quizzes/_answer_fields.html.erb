@@ -1,11 +1,13 @@
 <fieldset class="answer fields">
-<%= f.label :content, "Answer", style: "display: inline;" %>
+<%= f.label :content, "Answer" %>
 <%= link_to_remove_fields("(Remove)", f, class: "remove_answer_button") %>
-<p class="fillanswer">
-	<%= f.text_field :content  %>
-</p>
-<p class="tfanswer">
+<div class="fillanswer">
+	<%= f.text_field :content, class: "form-control"  %>
+</div>
+<div class="tfanswer radio">
 	<%= f.radio_button :content, 't' %>True
+</div>
+<div class="tfanswer radio">
 	<%= f.radio_button :content, 'f' %>False
-</p>
+</div>
 </fieldset>

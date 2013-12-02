@@ -4,10 +4,10 @@
 
 
 	<%= f.label :category, "Type" %>
-	<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype" %>
+	<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype form-control" %>
 
 	<%= f.label :content, "Question" %>
-	<%= f.text_field :content %>
+	<%= f.text_field :content, class: "form-control" %>
 
 	<%= f.fields_for :answers do |u| %>
 		<%= render 'answer_fields', :f => u %>
@@ -16,6 +16,6 @@
 	<div class="add_answer_button"><%= link_to_add_fields("Add Another Answer", f, :answers, class: "btn btn-primary") %></div>
 
 	<%= f.label :explanation, "Explanation" %>
-	<%= f.text_field :explanation %>
+	<%= f.text_field :explanation, class: "form-control" %>
 	</fieldset>
 </div>

@@ -23,6 +23,7 @@ class QuizzesController < ApplicationController
 	
 	def create
 		@quiz = current_user.quizzes.build(quiz_params)
+		@quiz.description = " " if @quiz.description.blank?
 		if @quiz.save
 			flash[:success] = "New quiz successfully created!"
 			redirect_to browse_path
@@ -32,6 +33,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def edit
+		@quiz.description = nil if @quiz.description.blank?
 	end
 	
 	def update

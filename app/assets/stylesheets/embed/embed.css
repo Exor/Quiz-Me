@@ -44,66 +44,121 @@
     border-spacing: 0;
 }
 
+/* load the font */
+@font-face {
+font-family: FiraSansOT-Regular;
+src: url("FiraSansOT-Regular.otf") format("opentype");
+}
+
 /* JQuizMe */
+.quizme_quizarea{
+    font-family:  'FiraSansOT-Regular', Helvetica, sans-serif;
+}
+
 .quizme_quizarea .quiz-el{
-    background: #ffaa33;
+    background: #fafafa;
+
     font-size: 1.1em;
-    font-family: Arial, Verdana, Helvetica, sans-serif;
+
+
+    
+    /*font-family: Arial, Verdana, Helvetica, sans-serif;*/
+
     position: relative;
+
     padding: 0.2em;
+
     width: 17em;
+
+    border: 1px solid black;
 }
 .quizme_quizarea .quiz-el div{
     padding: 0.2em;
+    
+    
 }
 .quizme_quizarea .quiz-el input{
     font-size: 0.8em;
 }
 /* .q-innerArea = .q-header, .q-help, .q-prob, .q-intro, .q-gameOver */
 .quizme_quizarea .q-innerArea{
-    background: #ffdd77;
+    background: #fafafa;
+
     position:relative;
+
     clear: both;
+
     color: black;
+    
+
 }
 .quizme_quizarea .q-header, .quizme_quizarea .q-help, .quizme_quizarea .q-review-menu {
-    border-bottom: thin black solid;
+
 }
 .quizme_quizarea .q-intro{
     padding: 0.2em;
+    
+
 }
 .quizme_quizarea .q-title{
     overflow: hidden;
+
     width: 80%;
+
     margin: 0;
+    
+
 }
 /*This is a hack, because IE fails on float:right.*/
 .quizme_quizarea .q-counter{
+
     position: absolute;
+
     top: 0%;
+
     right: 0%;
+
     margin: 1%;
+
     padding: 0%;
+
 }
 .quizme_quizarea .q-counter{
+
     float: right;
+
 }
 .quizme_quizarea .q-help{
     position: relative;
+
     clear:both;
+    
+
+}
+.quizme_quizarea .q-help-btn{
+    float: left;
 }
 /*.q-probArea = .q-ques, .q-ansSel, .q-result */
 .quizme_quizarea .q-probArea{
-    background: #eee;
-    border: thin black solid;
+
+    background: #fafafa;
+
+    /*border: thin black solid;*/
+
     font-size: 1.2em;
+
     position: relative;
+
 }
 .quizme_quizarea .q-help-menu{
     width: 97%;
+    
+
 }
 .quizme_quizarea .q-help-info{
     clear:both;
+    
+
 }
 .quizme_quizarea .q-quit-confirm, .quizme_quizarea .q-quit-area, .quizme_quizarea .q-review-arrows{
     display: inline;
@@ -136,6 +191,7 @@
 }
 .quizme_quizarea .q-ol-li{
     margin: 0.4em auto 0.4em auto;
+    display: list-item; 
 }
 .quizme_quizarea .q-ol-hover{
     background: #777777;
@@ -176,6 +232,10 @@
     line-height: 0;
     height:0;
 }
+
+/* Custom Quiz Styles */
+
+
 
 /* Sharebuttons */
 .quizme_sharebuttons ul{

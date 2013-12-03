@@ -17,17 +17,17 @@
   }
 
   // make a global object to store stuff in
-  if(!global.QuizMe) { global.QuizMe = {}; };
+  if(!global.QuizMe) { global.QuizMe = {}; }
   var QuizMe = global.QuizMe;
 
   // To keep track of which embeds we have already processed
-  if(!QuizMe.processedScripts) { QuizMe.processedScripts = []; };
+  if(!QuizMe.processedScripts) { QuizMe.processedScripts = []; }
   var processedScripts = QuizMe.processedScripts;
 
-  if(!QuizMe.styleTags) { QuizMe.styleTags = []; };
+  if(!QuizMe.styleTags) { QuizMe.styleTags = []; }
   var styleTags = QuizMe.styleTags;
 
-  if(!QuizMe.scriptTags) { QuizMe.scriptTags = []; };
+  if(!QuizMe.scriptTags) { QuizMe.scriptTags = []; }
   var scriptTags = QuizMe.scriptTags;
 
   var pageScriptTags = document.getElementsByTagName('script');
@@ -40,13 +40,13 @@
     var pageScriptTag = pageScriptTags[i];
 
     // src matches the url of this request, and not processed it yet.
-    if (pageScriptTag.src == thisRequestUrl && processedScripts.indexOf(pageScriptTag) < 0 && processed == 0) {
+    if (pageScriptTag.src == thisRequestUrl && processedScripts.indexOf(pageScriptTag) < 0 && processed === 0) {
       processed++;
 
       processedScripts.push(pageScriptTag);
 
       // add the style tag into the head (once only)
-      if(styleTags.length == 0) {
+      if(styleTags.length === 0) {
         // add a style tag to the head
         var styleTag = document.createElement("link");
         styleTag.rel = "stylesheet";
@@ -59,19 +59,19 @@
 
       var random_id = new Date().getTime();
       var div_id = 'quizme_embedded_quiz_' + random_id;
-	    var div = document.createElement('div');
-	    div.id = div_id
+      var div = document.createElement('div');
+      div.id = div_id;
 
       pageScriptTag.parentNode.insertBefore(div, pageScriptTag);
       div.innerHTML='<%= j(render("embed", quiz: @quiz)) %>';
 
-      if (scriptTags.length == 0) {
+      if (scriptTags.length === 0) {
         var embedMyQuiz = function() {
           embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id );
-        }
+        };
         var loadCustomJS = function() {
           loadScript("<%= File.join(root_url, 'assets', 'embed', 'embed.min.js') %>", embedMyQuiz);
-        }
+        };
 
         loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js", loadCustomJS);
 
@@ -83,11 +83,8 @@
           function(){
             embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id );
           }
-        )
-      }
-
-
-      
+        );
+      }      
     }
   }
 })(this);
@@ -119,6 +116,6 @@ function addLoadEvent(func) {
         oldonload();
       }
       func();
-    }
+    };
   }
 }

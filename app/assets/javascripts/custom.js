@@ -1,5 +1,3 @@
-console.log(jQuery.fn.jquery);
-
 function initialize(){
 stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});	
 }
@@ -77,11 +75,11 @@ function changeType(select)
 	}
 
 	hideDeletedAnswers(select);
-};
+}
 
 function hideAnswers() {
 	$('a.remove_question').first().hide();
-	var selectors = $('.questiontype')
+	var selectors = $('.questiontype');
 	for (i=0;i<selectors.length;i++)
 		{changeType(selectors[i]);}
 }

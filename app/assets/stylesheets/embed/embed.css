@@ -53,112 +53,69 @@ src: url("FiraSansOT-Regular.otf") format("opentype");
 /* JQuizMe */
 .quizme_quizarea{
     font-family:  'FiraSansOT-Regular', Helvetica, sans-serif;
+    text-align: left;
 }
 
 .quizme_quizarea .quiz-el{
     background: #fafafa;
-
     font-size: 1.1em;
-
-
-    
-    /*font-family: Arial, Verdana, Helvetica, sans-serif;*/
-
     position: relative;
-
     padding: 0.2em;
-
     width: 17em;
-
     border: 1px solid black;
 }
 .quizme_quizarea .quiz-el div{
     padding: 0.2em;
-    
-    
 }
 .quizme_quizarea .quiz-el input{
     font-size: 0.8em;
 }
-/* .q-innerArea = .q-header, .q-help, .q-prob, .q-intro, .q-gameOver */
 .quizme_quizarea .q-innerArea{
     background: #fafafa;
-
     position:relative;
-
     clear: both;
-
     color: black;
-    
-
 }
 .quizme_quizarea .q-header, .quizme_quizarea .q-help, .quizme_quizarea .q-review-menu {
 
 }
 .quizme_quizarea .q-intro{
     padding: 0.2em;
-    
-
 }
 .quizme_quizarea .q-title{
     overflow: hidden;
-
     width: 80%;
-
     margin: 0;
-    
-
 }
 /*This is a hack, because IE fails on float:right.*/
 .quizme_quizarea .q-counter{
-
     position: absolute;
-
     top: 0%;
-
     right: 0%;
-
     margin: 1%;
-
     padding: 0%;
-
 }
 .quizme_quizarea .q-counter{
-
     float: right;
-
 }
 .quizme_quizarea .q-help{
     position: relative;
-
     clear:both;
-    
-
 }
 .quizme_quizarea .q-help-btn{
     float: left;
 }
 /*.q-probArea = .q-ques, .q-ansSel, .q-result */
 .quizme_quizarea .q-probArea{
-
     background: #fafafa;
-
-    /*border: thin black solid;*/
-
     font-size: 1.2em;
-
     position: relative;
-
 }
 .quizme_quizarea .q-help-menu{
     width: 97%;
-    
-
 }
 .quizme_quizarea .q-help-info{
     clear:both;
-    
-
 }
 .quizme_quizarea .q-quit-confirm, .quizme_quizarea .q-quit-area, .quizme_quizarea .q-review-arrows{
     display: inline;
@@ -221,6 +178,9 @@ src: url("FiraSansOT-Regular.otf") format("opentype");
     position: relative;
     display: inline-block;
     width: 49%;
+}
+.quizme_quizarea .q-next-btn{
+    float:right;
 }
 .quizme_quizarea .q-rightArrow{
     float:right;

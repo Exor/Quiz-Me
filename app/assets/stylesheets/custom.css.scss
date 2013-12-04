@@ -1,5 +1,17 @@
 @import "bootstrap";
 
+/* Mixins */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
+
+/* variables */
+
+$grayMediumLight: #eaeaea;
+
+/* universal */
 body {
   padding-top: 50px;
 }
@@ -7,63 +19,6 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
-
-/* mixins, variables, etc. */
-
-$grayMediumLight: #eaeaea;
-
-/* universal 
-
-html {
-  overflow-y: scroll;
-}
-
-body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
-}
-
-/* typography 
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $grayLight;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
 
 /* header */
 
@@ -86,6 +41,7 @@ p {
 /* footer */
 
 footer {
+  text-align: center;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -97,14 +53,21 @@ footer {
     }
   }
   small {
-    float: left;
+    @media (min-width: $screen-sm-min) {
+      float: left;
+    }
   }
   ul {
-    float: right;
+    @media (min-width: $screen-sm-min) {
+      float: right;
+    }
     list-style: none;
     li {
-      float: left;
+      @media (min-width: $screen-sm-min) {
+        float: left;
+      }
       margin-left: 10px;
+      display: inline-block;
     }
   }
 }
@@ -127,9 +90,7 @@ footer {
   font-size: 16px;
   height: auto;
   padding: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  @include box-sizing(border-box);
 }
 .form-signin .form-control:focus {
   z-index: 2;
@@ -221,5 +182,22 @@ input[type="password"] {
     margin-right: auto;
     margin-left: auto;
   }
+
+  #sharebuttons{
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+      }
+    }
+  }
+
+  #embedcode{
+    
+  }
 }
 
+/* fix for social buttons display */
+.stBubble_count, .stMainServices, .stButton_gradient{
+  @include box-sizing(content-box);
+}

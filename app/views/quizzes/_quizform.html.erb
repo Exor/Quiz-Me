@@ -1,30 +1,30 @@
-<%= form_for @quiz, html:{class: "form-horizontal"} do |f| %>
+<%= form_for @quiz, html:{class: "form"} do |f| %>
 	<div class="row">
 		<%= render 'shared/error_messages', object: f.object %>
-		<div class="col-md-5">
+		<div class="col-md-3 col-md-push-9">
+			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit" %>
+		</div>
+		<div class="col-md-5 col-md-pull-3">
 			<fieldset>
 
 			<div class="form-group">
-				<%= f.label :name, "Title", class: "col-sm-3 control-label" %>
-				<div class="col-sm-9"><%= f.text_field :name, placeholder: "Name of your quiz", class: "form-control" %></div>
+				<%= f.label :name, "Title", class: "control-label" %>
+				<%= f.text_field :name, placeholder: "Name of your quiz", class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= f.label :description, class: "col-sm-3 control-label" %>
-				<div class="col-sm-9"><%= f.text_field :description, placeholder: "Describe your quiz", class: "form-control" %></div>
+				<%= f.label :description, class: "control-label" %>
+				<%= f.text_field :description, placeholder: "Describe your quiz", class: "form-control" %>
 			</div>
 
 			<div class="form-group">
-				<%= f.label :help_text, "Help Text", class: "col-sm-3 control-label" %>
-				<div class="col-sm-9"><%= f.text_field :help_text, placeholder: "Give a few hints for the quiz taker", class: "form-control" %></div>
+				<%= f.label :help_text, "Help Text", class: "control-label" %>
+				<%= f.text_field :help_text, placeholder: "Give a few hints for the quiz taker", class: "form-control" %>
 			</div>
 			</fieldset>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 col-md-pull-3">
 			<%= render 'option_fields', :f => f %>
-		</div>
-		<div class="col-md-3">
-			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success" %>
 		</div>
 	</div>
 	<div class="row">
@@ -33,6 +33,11 @@
 		<% end %>
 		<div class="span4 offset4 add_question_button">
 			<%= link_to_add_fields("Add a Question", f, :questions, class: "btn btn-primary") %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 submit">
+			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit" %>
 		</div>
 	</div>
 <% end %>

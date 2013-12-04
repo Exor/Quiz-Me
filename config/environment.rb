@@ -13,11 +13,11 @@ ActionView::Base.field_error_proc = Proc.new do |html_tag, instance_tag|
    		html_tag.insert html_tag.index('>'), ' class="has-error"'
  	end	
 
-	#if html_tag =~ /^<label/
-	#	errors = Array(instance_tag.error_message).join(',')
-	#	"#{html_tag}<div class='has-error'>#{errors}</div>".html_safe
-	#else
-	#	"#{html_tag}".html_safe
-	#end
+	if html_tag =~ /^<label/
+		errors = Array(instance_tag.error_message).join(',')
+		"#{html_tag}<div class='error'><small>#{errors}</small></div>".html_safe
+	else
+		"#{html_tag}".html_safe
+	end
   #{}"<span class='field_error'>#{html_tag}</span>".html_safe
 end

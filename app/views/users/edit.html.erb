@@ -6,19 +6,19 @@
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 			<div class="form-group">
-				<%= f.label :name, "Username" %>
+				<%= f.label :name, "Username", class: "control-label" %>
 				<%= f.text_field :name, class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :email %>
+				<%= f.label :email, class: "control-label" %>
 				<%= f.text_field :email, class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :password, "New Password" %>
+				<%= f.label :password, "New Password", class: "control-label" %>
 				<%= f.password_field :password, class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :password_confirmation, "Confirm New Password" %>
+				<%= f.label :password_confirmation, "Confirm New Password", class: "control-label" %>
 				<%= f.password_field :password_confirmation, class: "form-control" %>
 			</div>
 

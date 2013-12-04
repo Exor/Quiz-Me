@@ -149,6 +149,21 @@ footer {
   margin-right: auto;
   display: block;
 }
+
+.form-control{
+  margin-bottom: 15px;
+}
+
+.add_button{
+  margin-bottom: 20px;
+}
+
+#options{
+  margin-top: 0px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 60px;
+  }
+}
 /*
 .has-error{
   border-color: #b94a48;

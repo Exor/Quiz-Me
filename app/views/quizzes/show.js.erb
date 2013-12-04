@@ -91,19 +91,25 @@
 
 function loadScript(url, callback)
 {
-    // Adding the script tag to the head as suggested before
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-
-    // Then bind the event to the callback function.
-    // There are several events for cross browser compatibility.
-    script.onreadystatechange = callback;
-    script.onload = callback;
-
-    // Fire the loading
-    head.appendChild(script);
+            var script = document.createElement('script');
+            //if this is IE8 and below, handle onload differently
+            if(typeof document.attachEvent === "object"){
+                script.onreadystatechange = function(){
+                    //once the script is loaded, run the callback
+                    if (script.readyState === 'loaded'){
+                        if (callback){callback()};
+                    };
+                };  
+            } else {
+                //this is not IE8 and below, so we can actually use onload
+                script.onload = function(){
+                    //once the script is loaded, run the callback
+                    if (callback){callback()};
+                };
+            };
+            //create the script and add it to the DOM
+            script.src = url;
+            document.getElementsByTagName('head')[0].appendChild(script);
 }
 
 function addLoadEvent(func) {

@@ -1,5 +1,5 @@
 <fieldset class="answer fields">
-<%= f.label :content, "Answer" %>
+<%= f.label :content, "Answer", class: "control-label" %>
 <%= link_to_remove_fields("(Remove)", f, class: "remove_answer_button") %>
 <div class="fillanswer">
 	<%= f.text_field :content, class: "form-control"  %>

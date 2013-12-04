@@ -5,17 +5,17 @@
 			<fieldset>
 
 			<div class="form-group">
-				<%= f.label :name, "Title", class: "col-sm-3" %>
+				<%= f.label :name, "Title", class: "col-sm-3 control-label" %>
 				<div class="col-sm-9"><%= f.text_field :name, placeholder: "Name of your quiz", class: "form-control" %></div>
 			</div>
 
 			<div class="form-group">
-				<%= f.label :description, class: "col-sm-3" %>
+				<%= f.label :description, class: "col-sm-3 control-label" %>
 				<div class="col-sm-9"><%= f.text_field :description, placeholder: "Describe your quiz", class: "form-control" %></div>
 			</div>
 
 			<div class="form-group">
-				<%= f.label :help_text, "Help Text", class: "col-sm-3" %>
+				<%= f.label :help_text, "Help Text", class: "col-sm-3 control-label" %>
 				<div class="col-sm-9"><%= f.text_field :help_text, placeholder: "Give a few hints for the quiz taker", class: "form-control" %></div>
 			</div>
 			</fieldset>

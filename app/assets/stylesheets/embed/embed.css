@@ -44,6 +44,17 @@
     border-spacing: 0;
 }
 
+/* clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
 /* load the font */
 @font-face {
 font-family: FiraSansOT-Regular;

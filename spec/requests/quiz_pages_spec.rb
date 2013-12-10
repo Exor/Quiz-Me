@@ -41,11 +41,11 @@ describe "QuizPages" do
 		
 		describe "with invalid information" do
 			it "should not create a quiz" do
-				expect { click_button "Create" }.not_to change(Quiz, :count)
+				expect { click_button "submit-top" }.not_to change(Quiz, :count)
 			end
 			
 			describe "error message" do
-				before { click_button "Create" }
+				before { click_button "submit-top" }
 				it { should have_content('error') }
 			end
 		end
@@ -53,7 +53,7 @@ describe "QuizPages" do
 		describe "with no question" do
 			before { fill_in "Title", with: 'Quiz Title' }
 			it "should not create a quiz" do
-				expect {click_button "Create"}.not_to change(Quiz, :count)
+				expect {click_button "submit-top"}.not_to change(Quiz, :count)
 			end
 		end
 	end
@@ -63,10 +63,10 @@ describe "QuizPages" do
 		let!(:question) { FactoryGirl.create(:question, quiz: quiz) }
 		before { visit edit_quiz_path(quiz) }
 	
-		it { should have_title("Update") }
+		it { should have_title("Edit") }
 		
 		describe "with valid information" do
-			before { click_button "Update" }
+			before { click_button "submit-top" }
 			it { should have_content('Quiz updated') }
 		end
 		
@@ -77,7 +77,7 @@ describe "QuizPages" do
 				check "allow_review"
 				check "show_answer"
 				check "show_explaination"
-				click_button "Update"
+				click_button "submit-top"
 			end
 			it { should have_content('Quiz updated') }
 			specify { expect(quiz.reload.allow_restart).to eq true }
@@ -90,7 +90,7 @@ describe "QuizPages" do
 		describe "with invalid information" do
 			before do
 				fill_in "Title", with: ' '
-				click_button "Update"
+				click_button "submit-top"
 			end
 			it { should have_content('error') }
 		end

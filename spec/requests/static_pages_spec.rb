@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "StaticPages" do
   
-  let(:baseTitle) {"Quiz"}
+  let(:baseTitle) {"Quiz Me"}
   
   subject { page }
   

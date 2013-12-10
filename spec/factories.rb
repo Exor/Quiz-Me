@@ -11,17 +11,17 @@ FactoryGirl.define do
 		description "This is my quiz."
 		help_text "This is help text."
 		access_count 0
+		questions { Array.new(3) { FactoryGirl.build(:question)}}
 	end
 	
 	factory :question do
-		quiz
 		category "tf"
 		content "Is your name foobar?"
 		explanation "Because you are a program!"
+		answers { Array.new(3) { FactoryGirl.build(:answer)}}
 	end
 
 	factory :answer do
-		question
 		content "true"
 	end
 end

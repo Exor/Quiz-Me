@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Authentication" do
-  subject { page}
+  subject { page }
   
   describe "signin page" do
 	before { visit signin_path }
@@ -30,7 +30,7 @@ describe "Authentication" do
 		end
 		
 		it {should have_link("Logout", href: signout_path) }
-		it {should have_link("Settings", href: edit_user_path(user)) }
+		it {should have_link("Update", href: edit_user_path(user)) }
 		it {should_not have_link("Sign in", href: signin_path) }
 		
 		describe "Logout" do

@@ -9,6 +9,8 @@ QuizGenerator::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/browse', to: 'static_pages#browse', via: 'get'
+
+  # post 'quizzes/:id/increase', to: 'quizzes#increase'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

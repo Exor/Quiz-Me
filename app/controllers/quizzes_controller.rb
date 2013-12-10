@@ -9,8 +9,6 @@ class QuizzesController < ApplicationController
 		Quiz.find(params[:id]).questions.each do |question|
 			@answers.push(question.answers)
 		end
-		@quiz.increment(:access_count, by = 1)
-		@quiz.save
 	end
 
 	def new
@@ -50,6 +48,12 @@ class QuizzesController < ApplicationController
 		flash[:success] = "Quiz deleted"
 		redirect_to browse_path
 	end
+
+	#def increase
+	#	@quiz = Quiz.find(params[:id])
+	#	@quiz.increment(:access_count, by = 1)
+	#	@quiz.save
+	#end
 	
 	private
 	

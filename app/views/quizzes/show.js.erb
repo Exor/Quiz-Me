@@ -125,3 +125,16 @@ function addLoadEvent(func) {
     };
   }
 }
+
+//AJAX call for updating popularity count
+function myCall() {
+    var request = $.ajax({
+        url: "ajax.php",
+        type: "POST",            
+        data: { quiz: "1" }
+    });
+
+    request.done(function(msg) {
+        alert( "Data Saved: " + msg );        
+    });
+}

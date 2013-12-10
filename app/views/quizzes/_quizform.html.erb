@@ -2,7 +2,7 @@
 	<div class="row">
 		<%= render 'shared/error_messages', object: f.object %>
 		<div class="col-md-3 col-md-push-9">
-			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit" %>
+			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit", id: "submit-top" %>
 		</div>
 		<div class="col-md-5 col-md-pull-3">
 			<fieldset>
@@ -37,7 +37,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 submit">
-			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit" %>
+			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit", id: "submit-bottom" %>
 		</div>
 	</div>
 <% end %>

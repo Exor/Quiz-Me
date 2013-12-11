@@ -11,6 +11,7 @@ function remove_fields(link) {
     $(link).closest(".fields").hide();
     dealWithRemoveAnswerButton(link);
     dealWithRemoveQuestionButton(link);
+    addQuestionNumber();
 }
 
 function add_fields(link, association, content) {
@@ -23,6 +24,7 @@ function add_fields(link, association, content) {
     hideAnswers();
     dealWithAddAnswerButton(link);
     dealWithAddQuestionButton(link);
+    addQuestionNumber();
 }
 
 
@@ -117,4 +119,14 @@ function dealWithAddQuestionButton(link) {
 
 function dealWithRemoveQuestionButton(link) {
 	dealWithAddQuestionButton($(link).parent().parent().parent().nextAll(".add_question_button").children());
+}
+
+function addQuestionNumber(){
+	var elements = $("h2:contains('Question')").filter(":visible");
+		$(elements).each(function(i){
+			var num = i + 1
+			var str = "<h2>Question " + num + "</h2>";
+			$(this).replaceWith(str);
+		});
+	
 }

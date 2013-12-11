@@ -8,10 +8,9 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").slideUp();//.hide();
+    $(link).closest(".fields").slideUp(1000, addQuestionNumber);//.hide();
     dealWithRemoveAnswerButton(link);
     dealWithRemoveQuestionButton(link);
-    addQuestionNumber();
 }
 
 function add_fields(link, association, content) {

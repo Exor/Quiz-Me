@@ -8,7 +8,7 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").slideUp(1000, addQuestionNumber);//.hide();
+    $(link).closest(".fields").slideUp(400, addQuestionNumber);//.hide();
     dealWithRemoveAnswerButton(link);
     dealWithRemoveQuestionButton(link);
 }
@@ -123,10 +123,10 @@ function dealWithRemoveQuestionButton(link) {
 }
 
 function addQuestionNumber(){
-	var elements = $("h2:contains('Question')").filter(":visible");
+	var elements = $(".h2:contains('Question')").filter(":visible");
 		$(elements).each(function(i){
 			var num = i + 1
-			var str = "<h2>Question " + num + "</h2>";
+			var str = '<span class="h2">Question ' + num + " </span>";
 			$(this).replaceWith(str);
 		});
 	

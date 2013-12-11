@@ -8,7 +8,7 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").hide();
+    $(link).closest(".fields").slideUp();//.hide();
     dealWithRemoveAnswerButton(link);
     dealWithRemoveQuestionButton(link);
     addQuestionNumber();
@@ -17,7 +17,9 @@ function remove_fields(link) {
 function add_fields(link, association, content) {
     var new_id = new Date().getTime();
     var regex = new RegExp("new_" + association, "g");
+    contents = content.replace(regex, new_id);
     $(link).parent().before(content.replace(regex, new_id));
+    $(link).parent().prev().hide().slideDown();
     if (association == "questions") {
     	$(link).parent().prev().children().children(".add_answer_button").children().click();
     }

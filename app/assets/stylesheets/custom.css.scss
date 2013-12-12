@@ -12,7 +12,14 @@
 $grayMediumLight: #eaeaea;
 
 /* universal */
+/* load the font */
+@font-face {
+font-family: FiraSansOT-Regular;
+src: url("embed/FiraSansOT-Regular.otf") format("opentype");
+}
+
 body {
+  font-family:  'FiraSansOT-Regular', Helvetica, sans-serif;
   padding-top: 50px;
 }
 .starter-template {
@@ -181,6 +188,10 @@ footer {
   background-color: #F7F7F7;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.question-label{
+  font-size: 19px;
 }
 
 .input-xl, .input-group-xl > .form-control,

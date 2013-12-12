@@ -123,11 +123,11 @@ function dealWithRemoveQuestionButton(link) {
 }
 
 function addQuestionNumber(){
-	var elements = $(".h2:contains('Question')").filter(":visible");
+	var elements = $("label:contains('Question')").filter(":visible");
 		$(elements).each(function(i){
 			var num = i + 1
-			var str = '<span class="h2">Question ' + num + " </span>";
-			$(this).replaceWith(str);
+			var str = 'Question ' + num;
+			$(this).text(str);
 		});
 	
 }

@@ -183,6 +183,26 @@ footer {
   margin-bottom: 10px;
 }
 
+.input-xl, .input-group-xl > .form-control,
+.input-group-xl > .input-group-addon,
+.input-group-xl > .input-group-btn > .btn {
+  height: 60px;
+  padding: 10px 16px;
+  font-size: 28px;
+  line-height: 1.33; }
+
+.input-lg, .input-group-lg > .form-control,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-btn > .btn {
+  height: 40px;
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 1.33; }
+
+.question-box{
+  margin-bottom: 40px;
+}
+
 /* errors */
 
 .field_with_errors {

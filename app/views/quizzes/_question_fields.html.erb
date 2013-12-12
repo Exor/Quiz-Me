@@ -1,15 +1,11 @@
 <div class="col-md-8 col-md-offset-2 question_box">
 	<fieldset class="question fields">
-	<div class="div_h2">
-	<span class="h2">Question 1</span>
-	<span><%= link_to_remove_fields("(Remove)", f, class: "remove_question") %></span>
-	</div>
 
-	<%= f.label :category, "Type", class: "control-label" %>
-	<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype form-control" %>
+	<%= f.select :category, [['-- Choose a Type --', 'null'], ['True/False', 'tf'], ["Fill in the Blank", 'fill'], ["Multiple Choice Dropdown", "multi"], ["Multiple Choice Radio Button", "multiList"]], {}, onChange: "javascript: changeType(this)", class: "questiontype form-control input-lg" %>
 
 	<%= f.label :content, "Question", class: "control-label" %>
-	<%= f.text_field :content, class: "form-control" %>
+	<%= link_to_remove_fields("(Remove)", f, class: "remove_question") %>
+	<%= f.text_field :content, class: "form-control input-lg question-box" %>
 
 	<%= f.fields_for :answers do |u| %>
 		<%= render 'answer_fields', :f => u %>

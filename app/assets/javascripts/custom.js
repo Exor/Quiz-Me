@@ -8,9 +8,15 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").slideUp(400, addQuestionNumber);//.hide();
+    $(link).closest(".fields").slideUp(400, dealWithQuestionNumbers);//.hide();
     dealWithRemoveAnswerButton(link);
     dealWithRemoveQuestionButton(link);
+}
+
+function remove_field(link) {
+    $(link).prev("input[type=hidden]").val("1");
+    dealWithRemoveAnswerButton(link);
+    dealWithRemoveQuestionButton(link);	
 }
 
 function add_fields(link, association, content) {
@@ -25,7 +31,7 @@ function add_fields(link, association, content) {
     hideAnswers();
     dealWithAddAnswerButton(link);
     dealWithAddQuestionButton(link);
-    addQuestionNumber();
+    dealWithQuestionNumbers();
 }
 
 
@@ -69,8 +75,6 @@ function changeType(select)
 		$(select).nextAll(".add_answer_button").show();
 		$(select).nextAll(".answer").children(".remove_answer_button").show();
 		$(select).nextAll(".answer").first().children(".remove_answer_button").hide();
-		
-		$(select).nextAll(".answer").children("label").text("Wrong Answer");
 		$(select).nextAll(".answer").children("label").first().text("Correct Answer");
 
 		$(select).nextAll(".answer").children(".fillanswer").show();
@@ -93,7 +97,7 @@ function hideDeletedAnswers(select) {
 }
 
 function removeAllButFirstAnswer(select) {
-	remove_fields($(select).nextAll(".answer:not(:first)").children("a"));
+	remove_field($(select).nextAll(".answer:not(:first)").children("a"));
 }
 
 function dealWithAddAnswerButton(link) {
@@ -125,9 +129,34 @@ function dealWithRemoveQuestionButton(link) {
 function addQuestionNumber(){
 	var elements = $("label:contains('Question')").filter(":visible");
 		$(elements).each(function(i){
-			var num = i + 1
+			var num = i + 1;
 			var str = 'Question ' + num;
 			$(this).text(str);
 		});
+}
+
+function setAnswerNumber(){
+	var questions = $("fieldset.question.fields").filter(":visible");
+	$(questions).each(function(i){
+		var answers = $(this).children("fieldset.answer.fields").filter(":visible");
+		$(answers).each(function(i){
+			if (i===0)
+				{ var str = "Correct Answer"; }
+			else
+				{ var str = "Wrong Answer " + i; }
+			$(this).children("label:contains('Answer')").text(str);
+
+		});
+
+
+	});
 	
+
+	//$(link).nextAll(".answer").children("label").text("Wrong Answer");
+	//$(link).nextAll(".answer").children("label").first().text("Correct Answer");
+}
+
+function dealWithQuestionNumbers(){
+	addQuestionNumber();
+	setAnswerNumber();
 }

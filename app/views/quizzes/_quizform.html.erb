@@ -1,16 +1,21 @@
 <%= form_for @quiz, html:{class: "form"} do |f| %>
 	<div class="row">
 		<%= render 'shared/error_messages', object: f.object %>
+	</div>
+	<div class="row">
+		<fieldset>
+			<div class="form-group" id="quiz-title">
+				<%= f.label :name, "Quiz Title", class: "control-label input-lg" %>
+				<%= f.text_field :name, placeholder: "Name of your quiz", class: "form-control input-lg" %>
+			</div>
+		</fieldset>
+	</div>
+	<div class="row">
 		<div class="col-md-3 col-md-push-9">
 			<%= f.submit "#{buttontext} my Quiz!", class: "btn btn-lg btn-success submit", id: "submit-top" %>
 		</div>
 		<div class="col-md-5 col-md-pull-3">
 			<fieldset>
-
-			<div class="form-group">
-				<%= f.label :name, "Quiz Title", class: "control-label" %>
-				<%= f.text_field :name, placeholder: "Name of your quiz", class: "form-control" %>
-			</div>
 
 			<div class="form-group">
 				<%= f.label :description, "Quiz Description", class: "control-label" %>
@@ -32,7 +37,7 @@
 			<%= render 'question_fields', :f => u %>
 		<% end %>
 		<div class="col-md-8 col-md-offset-2 add_question_button">
-			<%= link_to_add_fields("Add a Question", f, :questions, class: "btn btn-primary add_button") %>
+			<%= link_to_add_fields("Add Question", f, :questions, class: "btn btn-primary add_button") %>
 		</div>
 	</div>
 	<div class="row">

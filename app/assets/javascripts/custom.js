@@ -1,6 +1,7 @@
 function initialize(){
 var switchTo5x=true;
-stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});	
+stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});
+dealWithQuestionNumbers();
 }
 
 $(document).ready(initialize);

@@ -72,7 +72,7 @@ src: url("FiraSansOT-Regular.otf") format("opentype");
     font-size: 1.1em;
     position: relative;
     padding: 0.2em;
-    width: 17em;
+    width: 310px;
     border: 1px solid black;
 }
 .quizme_quizarea .quiz-el div{
@@ -222,5 +222,5 @@ src: url("FiraSansOT-Regular.otf") format("opentype");
 
 /* Container */
 .quizme_quizarea{
-    width: 268px;
+    width: 310px;
 }

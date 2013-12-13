@@ -1,7 +1,7 @@
 function initialize(){
 var switchTo5x=true;
 stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});
-dealWithQuestionNumbers();
+updateOnscreenNumbers();
 }
 
 $(document).ready(initialize);
@@ -9,15 +9,13 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").slideUp(400, dealWithQuestionNumbers);//.hide();
-    dealWithRemoveAnswerButton(link);
-    dealWithRemoveQuestionButton(link);
+    $(link).closest(".fields").slideUp(400, updateOnscreenNumbers);//.hide();
+    updateButtons(link);
 }
 
 function remove_field(link) {
     $(link).prev("input[type=hidden]").val("1");
-    dealWithRemoveAnswerButton(link);
-    dealWithRemoveQuestionButton(link);	
+    updateButtons(link);
 }
 
 function add_fields(link, association, content) {
@@ -30,9 +28,8 @@ function add_fields(link, association, content) {
     	$(link).parent().prev().children().children(".add_answer_button").children().click();
     }
     hideAnswers();
-    dealWithAddAnswerButton(link);
-    dealWithAddQuestionButton(link);
-    dealWithQuestionNumbers();
+    updateButtons(link);
+    updateOnscreenNumbers();
 }
 
 
@@ -114,12 +111,12 @@ function dealWithRemoveAnswerButton(link) {
 	dealWithAddAnswerButton($(link).parent().nextAll(".add_answer_button").children());
 }
 
-function dealWithAddQuestionButton(link) {
-	$(link).show();
-	var questionLength = $(link).parent().prevAll(".question_box").length;
-	var hiddenQuestionLength = $(link).parent().prevAll(".question_box").children("fieldset").children("h2").children("input[type=hidden][value=1]").length;
-	if (questionLength - hiddenQuestionLength >= 10) {
-		$(link).hide();
+function dealWithAddQuestionButton() {
+	$(".add_question_button").show();
+	var numberOfVisibleQuestions = $(".question_box").children(".question").filter(":visible").length;
+
+	if (numberOfVisibleQuestions >= 10) {
+		$(".add_question_button").hide();
 	}
 }
 
@@ -157,7 +154,14 @@ function setAnswerNumber(){
 	//$(link).nextAll(".answer").children("label").first().text("Correct Answer");
 }
 
-function dealWithQuestionNumbers(){
+function updateOnscreenNumbers(){
 	addQuestionNumber();
 	setAnswerNumber();
+	dealWithAddQuestionButton();
+}
+
+function updateButtons(link){
+	dealWithRemoveQuestionButton(link);
+	dealWithAddAnswerButton(link);
+	dealWithRemoveAnswerButton(link);
 }

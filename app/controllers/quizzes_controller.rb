@@ -50,6 +50,7 @@ class QuizzesController < ApplicationController
 	end
 
 	def increase
+		render :nothing => true
 		@quiz = Quiz.friendly.find(params[:id])
 		@quiz.increment(:access_count, by = 1)
 		@quiz.save

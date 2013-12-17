@@ -67,7 +67,7 @@
 
       if (scriptTags.length === 0) {
         var embedMyQuiz = function() {
-          embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id );
+          embedQuiz('<%= raw(j @quiz.to_json(:except => [ :updated_at, :created_at, :access_count])) %>', '<%= raw(j @questions.to_json(:except => [ :updated_at, :created_at])) %>', '<%= raw(j @answers.to_json(:except => [ :updated_at, :created_at])) %>', div_id, '<%= raw(request.url) %>'.replace(".js", "/increase") );
         };
         var loadCustomJS = function() {
           loadScript("<%= File.join(root_url, 'assets', 'embed', 'embed.min.js') %>", embedMyQuiz);
@@ -124,17 +124,4 @@ function addLoadEvent(func) {
       func();
     };
   }
-}
-
-//AJAX call for updating popularity count
-function myCall() {
-    var request = $.ajax({
-        url: "ajax.php",
-        type: "POST",            
-        data: { quiz: "1" }
-    });
-
-    request.done(function(msg) {
-        alert( "Data Saved: " + msg );        
-    });
 }

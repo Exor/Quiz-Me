@@ -2,6 +2,7 @@ function initialize(){
 var switchTo5x=true;
 stLight.options({publisher: "88366333-b42c-4103-adcb-648d74c35fd4", doNotHash: true, doNotCopy: true, hashAddressBar: false});
 updateOnscreenNumbers();
+hideAnswers();
 }
 
 $(document).ready(initialize);
@@ -9,13 +10,11 @@ $(document).on('page:load', initialize);
 
 function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
-    $(link).closest(".fields").slideUp(400, updateOnscreenNumbers);//.hide();
-    updateButtons(link);
+    $(link).closest(".fields").slideUp(400, updateOnscreenNumbers);
 }
 
 function remove_field(link) {
     $(link).prev("input[type=hidden]").val("1");
-    updateButtons(link);
 }
 
 function add_fields(link, association, content) {
@@ -27,9 +26,8 @@ function add_fields(link, association, content) {
     if (association == "questions") {
     	$(link).parent().prev().children().children(".add_answer_button").children().click();
     }
-    hideAnswers();
-    updateButtons(link);
     updateOnscreenNumbers();
+    hideAnswers();
 }
 
 
@@ -95,7 +93,7 @@ function hideDeletedAnswers(select) {
 }
 
 function removeAllButFirstAnswer(select) {
-	remove_field($(select).nextAll(".answer:not(:first)").children("a"));
+	remove_fields($(select).nextAll(".answer:not(:first)").children("a"));
 }
 
 function dealWithAddAnswerButton() {
@@ -109,10 +107,6 @@ function dealWithAddAnswerButton() {
 	});
 }
 
-function dealWithRemoveAnswerButton(link) {
-	dealWithAddAnswerButton($(link).parent().nextAll(".add_answer_button").children());
-}
-
 function dealWithAddQuestionButton() {
 	$(".add_question_button").show();
 	var numberOfVisibleQuestions = $(".question_box").children(".question").filter(":visible").length;
@@ -120,10 +114,6 @@ function dealWithAddQuestionButton() {
 	if (numberOfVisibleQuestions >= 10) {
 		$(".add_question_button").hide();
 	}
-}
-
-function dealWithRemoveQuestionButton(link) {
-	dealWithAddQuestionButton($(link).parent().parent().parent().nextAll(".add_question_button").children());
 }
 
 function setQuestionNumber(){
@@ -150,10 +140,6 @@ function setAnswerNumber(){
 
 
 	});
-	
-
-	//$(link).nextAll(".answer").children("label").text("Wrong Answer");
-	//$(link).nextAll(".answer").children("label").first().text("Correct Answer");
 }
 
 function updateOnscreenNumbers(){
@@ -161,9 +147,4 @@ function updateOnscreenNumbers(){
 	setAnswerNumber();
 	dealWithAddQuestionButton();
 	dealWithAddAnswerButton();
-}
-
-function updateButtons(link){
-	dealWithRemoveQuestionButton(link);
-	dealWithRemoveAnswerButton(link);
 }

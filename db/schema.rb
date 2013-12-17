@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120014752) do
+ActiveRecord::Schema.define(version: 20131216051459) do
 
   create_table "answers", force: true do |t|
     t.string   "content"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131120014752) do
     t.boolean  "allow_review",      default: true
     t.boolean  "show_answer",       default: true
     t.boolean  "show_explaination", default: true
+    t.string   "unique_url"
   end
 
   add_index "quizzes", ["user_id", "created_at"], name: "index_quizzes_on_user_id_and_created_at"

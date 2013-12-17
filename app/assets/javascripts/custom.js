@@ -98,13 +98,15 @@ function removeAllButFirstAnswer(select) {
 	remove_field($(select).nextAll(".answer:not(:first)").children("a"));
 }
 
-function dealWithAddAnswerButton(link) {
-	$(link).show();
-	var answerLength = $(link).parent().prevAll(".answer").length;
-	var hiddenAnswerLength = $(link).parent().prevAll(".answer").children("input[type=hidden][value=1]").length;
-	if (answerLength - hiddenAnswerLength >= 6) {
-		$(link).hide();
-	}
+function dealWithAddAnswerButton() {
+	var buttons = $(".add_answer_button");
+	$(buttons).each(function(i){
+		$(this).show();
+		var answerLength = $(this).prevAll(".answer").filter(":visible").length;
+		if (answerLength >= 6) {
+			$(this).hide();
+		}
+	});
 }
 
 function dealWithRemoveAnswerButton(link) {
@@ -158,10 +160,10 @@ function updateOnscreenNumbers(){
 	setQuestionNumber();
 	setAnswerNumber();
 	dealWithAddQuestionButton();
+	dealWithAddAnswerButton();
 }
 
 function updateButtons(link){
 	dealWithRemoveQuestionButton(link);
-	dealWithAddAnswerButton(link);
 	dealWithRemoveAnswerButton(link);
 }

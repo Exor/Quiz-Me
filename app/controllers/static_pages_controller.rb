@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-  	@quizzes = Quiz.all(:order => 'access_count DESC') #.first(3)
+  	@quizzes = Quiz.all(:order => 'access_count DESC')
   end
 
   def about

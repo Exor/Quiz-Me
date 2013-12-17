@@ -16,7 +16,7 @@ describe "Authentication" do
 		it { should have_selector('div.alert.alert-error', text: 'Invalid') }
 		
 		describe "after visiting another page" do
-			before { click_link "Home" }
+			before { click_link "About" }
 			it { should_not have_selector('div.alert.alert-error') }
 		end
 	end
@@ -32,11 +32,6 @@ describe "Authentication" do
 		it {should have_link("Logout", href: signout_path) }
 		it {should have_link("Update", href: edit_user_path(user)) }
 		it {should_not have_link("Sign in", href: signin_path) }
-		
-		describe "Logout" do
-			before { click_link "Logout" }
-			it { should_not have_link('Logout') }	
-	    end
 	end
 	
 	describe "authorization" do

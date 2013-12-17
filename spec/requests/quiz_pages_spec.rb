@@ -56,6 +56,13 @@ describe "QuizPages" do
 				expect {click_button "submit-top"}.not_to change(Quiz, :count)
 			end
 		end
+
+		describe "with no answer" do
+			before { fill_in "Question", with: 'Are you a programmer?' }
+			it "should not create a quiz" do
+				expect {click_button "submit-top"}.not_to change(Quiz, :count)
+			end
+		end
 	end
 	
 	describe "quiz edit page" do

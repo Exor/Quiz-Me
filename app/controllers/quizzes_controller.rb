@@ -3,10 +3,10 @@ class QuizzesController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit, :update]
 	
 	def show
-		@quiz = Quiz.find(params[:id])
-		@questions = Quiz.find(params[:id]).questions
+		@quiz = Quiz.friendly.find(params[:id])
+		@questions = Quiz.friendly.find(params[:id]).questions
 		@answers = []
-		Quiz.find(params[:id]).questions.each do |question|
+		Quiz.friendly.find(params[:id]).questions.each do |question|
 			@answers.push(question.answers)
 		end
 	end
@@ -79,7 +79,7 @@ class QuizzesController < ApplicationController
 		end	
 		
 		def correct_user
-			@quiz = current_user.quizzes.find_by(id: params[:id])
+			@quiz = current_user.quizzes.find_by(unique_url: params[:id])
 			redirect_to root_url if @quiz.nil?
 		end
 end

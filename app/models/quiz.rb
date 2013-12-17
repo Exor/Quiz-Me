@@ -1,4 +1,6 @@
 class Quiz < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :unique_url
 	belongs_to :user
 	has_many :questions, dependent: :destroy
 	before_create :create_unique_url

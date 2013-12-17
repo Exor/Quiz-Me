@@ -10,6 +10,7 @@ FactoryGirl.define do
 		name "My Quiz"
 		description "This is my quiz."
 		help_text "This is help text."
+		unique_url "123ABC"
 		access_count 0
 		questions { Array.new(3) { FactoryGirl.build(:question)}}
 	end

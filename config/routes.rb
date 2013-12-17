@@ -9,7 +9,7 @@ QuizGenerator::Application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/browse', to: 'static_pages#browse', via: 'get'
-  post 'quizzes/:id/increase', to: 'quizzes#increase'
+  post 'quizzes/:id/increase', to: 'quizzes#increase', as: :increase
 
   # post 'quizzes/:id/increase', to: 'quizzes#increase'
   

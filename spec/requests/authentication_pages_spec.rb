@@ -66,6 +66,11 @@ describe "Authentication" do
 				it {should have_title("Take")}
 			end
 
+			describe "submitting the increase action" do
+				before { post increase_path(quiz) }
+				specify { expect(quiz.reload.access_count).to eq 1 }
+			end
+
 			describe "submitting the create action" do
 				before { post quizzes_path }
 				specify { expect(response).to redirect_to(signin_path) }

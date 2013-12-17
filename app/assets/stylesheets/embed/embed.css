@@ -122,6 +122,9 @@ src: url("FiraSansOT-Regular.otf") format("opentype");
     font-size: 1.2em;
     position: relative;
 }
+.quizme_quizarea .q-ol-li-ansSel{
+    margin-left: 7px;
+}
 .quizme_quizarea .q-help-menu{
     width: 97%;
 }

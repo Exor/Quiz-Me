@@ -28,7 +28,7 @@ en:
 
       quiz/questions:
         content: "Question"
-        category: "Question Type"
+        category: "Type"
         answers: ""
 
       quiz/questions/answers:

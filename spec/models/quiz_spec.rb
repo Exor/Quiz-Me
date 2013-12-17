@@ -19,6 +19,7 @@ describe Quiz do
 	it { should respond_to(:show_answer) }
 	it { should respond_to(:show_explaination) }
 	it { should respond_to(:questions) }
+	it { should respond_to(:unique_url) }
 	its(:user) { should eq user }
 	
 	it { should be_valid }
@@ -27,7 +28,7 @@ describe Quiz do
 		before { quiz.user_id = nil }
 		it { should_not be_valid }
 	end
-	
+
 	describe "when quiz_name is blank" do
 		before { quiz.name = " " }
 		it { should_not be_valid }

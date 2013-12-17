@@ -94,10 +94,6 @@ describe "QuizPages" do
 			end
 			it { should have_content('error') }
 		end
-		
-		describe "question creation" do
-			describe
-		end
 	end
 	
 

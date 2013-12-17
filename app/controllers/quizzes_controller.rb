@@ -49,11 +49,11 @@ class QuizzesController < ApplicationController
 		redirect_to browse_path
 	end
 
-	#def increase
-	#	@quiz = Quiz.find(params[:id])
-	#	@quiz.increment(:access_count, by = 1)
-	#	@quiz.save
-	#end
+	def increase
+		@quiz = Quiz.friendly.find(params[:id])
+		@quiz.increment(:access_count, by = 1)
+		@quiz.save
+	end
 	
 	private
 	

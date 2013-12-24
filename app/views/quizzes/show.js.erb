@@ -51,7 +51,7 @@
         var styleTag = document.createElement("link");
         styleTag.rel = "stylesheet";
         styleTag.type = "text/css";
-        styleTag.href =  "<%= File.join(root_url, 'assets', 'embed', 'embed.css') %>";
+        styleTag.href =  "<%= File.join(root_url, 'assets', 'embed', 'embed.min.css') %>";
         styleTag.media = "all";
         document.getElementsByTagName('head')[0].appendChild(styleTag);
         styleTags.push(styleTag);

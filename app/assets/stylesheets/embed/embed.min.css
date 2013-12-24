@@ -1,0 +1,38 @@
+.quizme_quizarea html,.quizme_quizarea body,.quizme_quizarea div,.quizme_quizarea span,.quizme_quizarea applet,.quizme_quizarea object,.quizme_quizarea iframe,.quizme_quizarea h1,.quizme_quizarea h2,.quizme_quizarea h3,.quizme_quizarea h4,.quizme_quizarea h5,.quizme_quizarea h6,.quizme_quizarea p,.quizme_quizarea blockquote,.quizme_quizarea pre,.quizme_quizarea a,.quizme_quizarea abbr,.quizme_quizarea acronym,.quizme_quizarea address,.quizme_quizarea big,.quizme_quizarea cite,.quizme_quizarea code,.quizme_quizarea del,.quizme_quizarea dfn,.quizme_quizarea em,.quizme_quizarea img,.quizme_quizarea ins,.quizme_quizarea kbd,.quizme_quizarea q,.quizme_quizarea s,.quizme_quizarea samp,.quizme_quizarea small,.quizme_quizarea strike,.quizme_quizarea strong,.quizme_quizarea sub,.quizme_quizarea sup,.quizme_quizarea tt,.quizme_quizarea var,.quizme_quizarea b,.quizme_quizarea u,.quizme_quizarea i,.quizme_quizarea center,.quizme_quizarea dl,.quizme_quizarea dt,.quizme_quizarea dd,.quizme_quizarea ol,.quizme_quizarea ul,.quizme_quizarea li,.quizme_quizarea fieldset,.quizme_quizarea form,.quizme_quizarea label,.quizme_quizarea legend,.quizme_quizarea table,.quizme_quizarea caption,.quizme_quizarea tbody,.quizme_quizarea tfoot,.quizme_quizarea thead,.quizme_quizarea tr,.quizme_quizarea th,.quizme_quizarea td,.quizme_quizarea article,.quizme_quizarea aside,.quizme_quizarea canvas,.quizme_quizarea details,.quizme_quizarea embed,.quizme_quizarea .quizme_quizarea figure,.quizme_quizarea figcaption,.quizme_quizarea footer,.quizme_quizarea header,.quizme_quizarea hgroup,.quizme_quizarea .quizme_quizarea menu,.quizme_quizarea nav,.quizme_quizarea output,.quizme_quizarea ruby,.quizme_quizarea section,.quizme_quizarea summary,.quizme_quizarea time,.quizme_quizarea mark,.quizme_quizarea audio,.quizme_quizarea video{border:0;font-size:100%;font-family:sans-serif;font:inherit;vertical-align:baseline;margin:0;padding:0}
+.quizme_quizarea article,.quizme_quizarea aside,.quizme_quizarea details,.quizme_quizarea figcaption,.quizme_quizarea figure,.quizme_quizarea .quizme_quizarea footer,.quizme_quizarea header,.quizme_quizarea hgroup,.quizme_quizarea menu,.quizme_quizarea nav,.quizme_quizarea section{display:block}
+.quizme_quizarea body{line-height:1}
+.quizme_quizarea ol,.quizme_quizarea ul{list-style:none}
+.quizme_quizarea blockquote,.quizme_quizarea q{quotes:none}
+.quizme_quizarea blockquote:before,.quizme_quizarea blockquote:after,.quizme_quizarea q:before,.quizme_quizarea q:after{content:none}
+.quizme_quizarea table{border-collapse:collapse;border-spacing:0}
+.cf:before,.cf:after{content:" ";display:table}
+@font-face{font-family:FiraSansOT-Regular;src:url(FiraSansOT-Regular.otf) format(opentype)}
+.quizme_quizarea{font-family:FiraSansOT-Regular, Helvetica, sans-serif;text-align:left;width:310px}
+.quizme_quizarea .quiz-el{background:#fafafa;font-size:1.1em;position:relative;width:310px;border:1px solid #000;padding:.2em}
+.quizme_quizarea .quiz-el input{font-size:.8em}
+.quizme_quizarea .q-innerArea{background:#fafafa;position:relative;clear:both;color:#000}
+.quizme_quizarea .q-title{overflow:hidden;width:80%;margin:0}
+.quizme_quizarea .q-counter{position:absolute;top:0;right:0;float:right;margin:1%;padding:0}
+.quizme_quizarea .q-help{position:relative;clear:both}
+.quizme_quizarea .q-probArea{background:#fafafa;font-size:1.2em;position:relative}
+.quizme_quizarea .q-ol-li-ansSel{margin-left:7px}
+.quizme_quizarea .q-help-menu{width:97%}
+.quizme_quizarea .q-quit-confirm,.quizme_quizarea .q-quit-area,.quizme_quizarea .q-review-arrows{display:inline;width:auto}
+.quizme_quizarea .q-review-arrows{position:relative;width:2.3em}
+.quizme_quizarea .q-center{text-align:center;display:block;margin-left:auto;margin-right:auto}
+.quizme_quizarea .q-gameOver .q-statTotal{color:blue}
+.quizme_quizarea .q-quesInput{width:95%}
+.quizme_quizarea .q-ol{list-style-type:upper-alpha;list-style-position:inside;margin:0;padding:0}
+.quizme_quizarea .q-ol-li{display:list-item;margin:.4em auto}
+.quizme_quizarea .q-ol-hover{background:#777}
+.quizme_quizarea .q-ol-active{background:#000;color:#cfa}
+.quizme_quizarea .q-select{font-size:.8em;width:100%}
+.quizme_quizarea .q-timer-area{display:block;text-align:center;width:auto;line-height:0;height:0}
+.quizme_quizarea .q-review-menu{text-align:center;width:auto}
+.quizme_quizarea .q-reviewBar-btns{position:relative;display:inline-block;width:49%}
+.quizme_sharebuttons ul{float:none;list-style:none;margin:5px 0 0}
+.quizme_sharebuttons li{display:inline-block;margin:auto}
+.cf:after,.quizme_quizarea .q-help-info{clear:both}
+.quizme_quizarea .quiz-el div,.quizme_quizarea .q-intro{padding:.2em}
+.quizme_quizarea .q-help-btn,.quizme_quizarea .q-leftArrow{float:left}
+.quizme_quizarea .q-quit-area,.quizme_quizarea .q-next-btn,.quizme_quizarea .q-rightArrow{float:right}
